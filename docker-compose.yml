@@ -1,0 +1,12 @@
+version: "3.1"
+
+services:
+  vuepress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8500:8080
+    volumes:
+      - ./:/app
+      - ./conf.d:/etc/nginx/conf.d
