@@ -28,7 +28,7 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           BRANCH: gh-pages
-          folder: build
+          folder: ./.vuepress/dist
           clean: true
           clean-exclude: |
             special-file.txt
