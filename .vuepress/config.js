@@ -18,7 +18,7 @@ let sidebar_other = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'ot
 module.exports = {
     title: '📖Documents',
     description: 'hello world',
-    base: '/',
+    base: '/docs/',
     host: '127.0.0.1',
     port: '8080',
     head: [
