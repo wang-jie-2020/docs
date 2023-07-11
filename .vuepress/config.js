@@ -22,7 +22,7 @@ module.exports = {
     host: '127.0.0.1',
     port: '8080',
     head: [
-        ['script', { src: '$withBase(/live2d/L2Dwidget.min.js)' }],
+        ['script', { src: '/live2d/L2Dwidget.min.js' }],
         ['script', {}, `
             const models = [
                 '/live2d/live2d-widget-model-epsilon2_1/assets/Epsilon2.1.model.json',
