@@ -213,7 +213,7 @@ const sideBarTool = {
                 sidebars.push(folder)
             }
             else if (fileInfo.isFile()) {
-                if (SuffixIncludes.includes(item.split('.')[1])) {
+                if (SuffixIncludes.includes(PATH.extname(item))) {
                     if (item === 'readme.md' || item === 'README.md') {
                         filename = ''
                     } else {

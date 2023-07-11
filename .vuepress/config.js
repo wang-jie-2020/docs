@@ -7,7 +7,7 @@ const { sideBarTool } = require(path.join(__dirname, './utils/index.js'))
 // 需要排除的一些目录
 let unDirIncludes = ['node_modules', 'assets', 'public', 'images', 'media']
 // 只需要处理后缀的文件类型
-let SuffixIncludes = ['md', 'html']
+let SuffixIncludes = ['.md', '.html']
 
 //使用方法生生成侧边栏
 let sidebar_net = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'net/'), path.join(rootPath, 'net/'), unDirIncludes, SuffixIncludes, {})
@@ -169,11 +169,8 @@ module.exports = {
                 {
                     title: 'note',
                     children: [
-                        '2022-11-07',
-                        '2023-05-11',
-                        '2023-06-05',
-                        '2023-06-07',
-                        '2023-06-20'
+                        ['2022-11-07','2022-11-07'],
+                        ['2023-05-11','2023-05-11']
                     ]
                 }
             ],
