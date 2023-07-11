@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>数组和切片 | 📖Documents</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <script src="/live2d/L2Dwidget.min.js"></script>
+    <script>
+            const models = [
+                '/live2d/live2d-widget-model-epsilon2_1/assets/Epsilon2.1.model.json',
+                '/live2d/live2d-widget-model-haru/01/assets/haru01.model.json',
+                '/live2d/live2d-widget-model-haru/02/assets/haru02.model.json',
+                '/live2d/live2d-widget-model-haruto/assets/haruto.model.json',
+                '/live2d/live2d-widget-model-koharu/assets/koharu.model.json',
+                '/live2d/live2d-widget-model-hijiki/assets/hijiki.model.json',
+                '/live2d/live2d-widget-model-tororo/assets/tororo.model.json',
+                '/live2d/live2d-widget-model-izumi/assets/izumi.model.json',
+                '/live2d/live2d-widget-model-miku/assets/miku.model.json',
+                '/live2d/live2d-widget-model-shizuku/assets/shizuku.model.json',
+                '/live2d/live2d-widget-model-wanko/assets/wanko.model.json',
+                '/live2d/live2d-widget-model-z16/assets/z16.model.json'
+            ];
+            L2Dwidget.init({
+                "model": {
+                    jsonPath: models[parseInt(Math.random() * (models.length))]
+                },
+                "display": {
+                    "position": "left",
+                    "width": 150,
+                    "height": 210,
+                    "hOffset": 5,
+                    "vOffset": 5,
+                    "superSample": 1,
+                },
+                "mobile": {
+                    "scale": 1,
+                    "show": true,
+                    "motion": true,
+                },
+                "react": {
+                    "opacityDefault": .5,
+                    "opacityOnHover": .2
+                }
+            });
+        </script>
+    <meta name="description" content="hello world">
+    
+    <link rel="preload" href="/assets/css/0.styles.f0d666ad.css" as="style"><link rel="preload" href="/assets/js/app.a31f4491.js" as="script"><link rel="preload" href="/assets/js/2.d0525731.js" as="script"><link rel="preload" href="/assets/js/11.8bf17a59.js" as="script"><link rel="prefetch" href="/assets/js/10.57ecc6e3.js"><link rel="prefetch" href="/assets/js/12.0373b2c7.js"><link rel="prefetch" href="/assets/js/13.c623f8a7.js"><link rel="prefetch" href="/assets/js/14.ea0372d4.js"><link rel="prefetch" href="/assets/js/15.039ed372.js"><link rel="prefetch" href="/assets/js/16.37b0c450.js"><link rel="prefetch" href="/assets/js/17.694c5b28.js"><link rel="prefetch" href="/assets/js/18.7e9005a2.js"><link rel="prefetch" href="/assets/js/19.d3c75cf1.js"><link rel="prefetch" href="/assets/js/20.0080a65d.js"><link rel="prefetch" href="/assets/js/21.a0393bc3.js"><link rel="prefetch" href="/assets/js/22.ca4e8a81.js"><link rel="prefetch" href="/assets/js/23.15417e85.js"><link rel="prefetch" href="/assets/js/24.0501f50b.js"><link rel="prefetch" href="/assets/js/25.9f8fcb8b.js"><link rel="prefetch" href="/assets/js/26.9a3d43ef.js"><link rel="prefetch" href="/assets/js/27.445b3cfc.js"><link rel="prefetch" href="/assets/js/28.34608dc9.js"><link rel="prefetch" href="/assets/js/29.cbab2177.js"><link rel="prefetch" href="/assets/js/3.943036e3.js"><link rel="prefetch" href="/assets/js/30.50c2c4cb.js"><link rel="prefetch" href="/assets/js/31.4bee5eb5.js"><link rel="prefetch" href="/assets/js/32.8ea01bd4.js"><link rel="prefetch" href="/assets/js/33.f4653361.js"><link rel="prefetch" href="/assets/js/34.5b3f25eb.js"><link rel="prefetch" href="/assets/js/35.94365712.js"><link rel="prefetch" href="/assets/js/36.696a788f.js"><link rel="prefetch" href="/assets/js/37.77a3939b.js"><link rel="prefetch" href="/assets/js/38.31e03707.js"><link rel="prefetch" href="/assets/js/39.27f3b720.js"><link rel="prefetch" href="/assets/js/4.a39d9af2.js"><link rel="prefetch" href="/assets/js/5.869f76a5.js"><link rel="prefetch" href="/assets/js/6.b6505e5e.js"><link rel="prefetch" href="/assets/js/7.55fd966e.js"><link rel="prefetch" href="/assets/js/8.989991fa.js"><link rel="prefetch" href="/assets/js/9.bd3904e9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f0d666ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">📖Documents</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术栈" class="mobile-dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/net/" class="nav-link">
+  net
+</a></li><li class="dropdown-item"><!----> <a href="/go/" class="nav-link router-link-active">
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/java/" class="nav-link">
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/other/" class="nav-link">
+  other
+</a></li><li class="dropdown-item"><!----> <a href="/note/" class="nav-link">
+  note
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="github" class="dropdown-title"><span class="title">github</span> <span class="arrow down"></span></button> <button type="button" aria-label="github" class="mobile-dropdown-title"><span class="title">github</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/wang-jie-2020/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github.com
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术栈" class="mobile-dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/net/" class="nav-link">
+  net
+</a></li><li class="dropdown-item"><!----> <a href="/go/" class="nav-link router-link-active">
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/java/" class="nav-link">
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/other/" class="nav-link">
+  other
+</a></li><li class="dropdown-item"><!----> <a href="/note/" class="nav-link">
+  note
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="github" class="dropdown-title"><span class="title">github</span> <span class="arrow down"></span></button> <button type="button" aria-label="github" class="mobile-dropdown-title"><span class="title">github</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/wang-jie-2020/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github.com
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>GO入门指南</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/go/GO入门指南/01零散记录.html" class="sidebar-link">01零散记录</a></li><li><a href="/go/GO入门指南/map.html" class="sidebar-link">map</a></li><li><a href="/go/GO入门指南/《Go入门指南》.html" class="sidebar-link">《Go入门指南》</a></li><li><a href="/go/GO入门指南/数组和切片.html" class="active sidebar-link">数组和切片</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/go/GO入门指南/数组和切片.html#数组" class="sidebar-link">数组</a></li><li class="sidebar-sub-header"><a href="/go/GO入门指南/数组和切片.html#切片" class="sidebar-link">切片</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="数组和切片"><a href="#数组和切片" class="header-anchor">#</a> 数组和切片</h1> <h2 id="数组"><a href="#数组" class="header-anchor">#</a> 数组</h2> <p>数组声明 <code>var identifier [len]type</code></p> <p>数组是==值==类型,这意味着传递数组时会有比较不同</p> <blockquote><p>如果函数需要操作数组,那么可能总是以切片表示更好?</p></blockquote> <p>==todo== 通过<code>&amp;</code>传递数组引用不需要再通过<code>*</code>转换? <code>例7.6 array_sum.go</code></p> <h2 id="切片"><a href="#切片" class="header-anchor">#</a> 切片</h2> <p>切片声明 <code>var identifier []type</code></p> <p>切片是引用类型,更加类似于其他语言中的集合,它是数组的一个连续片段的引用</p> <p>​	<code>var slice1 []type = arr1[start:end]</code></p> <p>​	slice1是由数组arr1从 <code>start</code> 索引到 ==end-1== 索引之间的元素构成的子集</p> <p>切片的长度 <code>len()</code></p> <p>切片的容量 <code>cap()</code> --- 切片的长度 + 数组除切片之外的长度,也就是从 <code>start</code> 索引到数组末尾</p> <p>切片可以调整大小(切片重组 <strong>reslicing</strong>),但必须满足新的start索引 &gt;= 之前的start索引</p> <p><code>make()</code> 初始化切片,方法签名：<code>func make([]T, len, cap)</code>，其中 <code>cap</code> 是可选参数</p> <p>​	<code>make([]int, 50, 100) == new([100]int)[0:50]</code></p> <p>​	==todo== new() 和 make() 的区别有什么很大的影响?</p> <blockquote><p><code>func copy(dst, src []T) int</code> 方法将类型为 <code>T</code> 的切片从源地址 <code>src</code> 拷贝到目标地址 <code>dst</code>，覆盖 <code>dst</code> 的相关元素，并且返回拷贝的元素个数。源地址和目标地址可能会有重叠。拷贝个数是 <code>src</code> 和 <code>dst</code> 的长度最小值。如果 <code>src</code> 是字符串那么元素类型就是 <code>byte</code>。如果你还想继续使用 <code>src</code>，在拷贝结束后执行 <code>src = dst</code>。</p> <p><code>func append(s[]T, x ...T) []T</code> 其中 <code>append()</code> 方法将 0 个或多个具有相同类型 <code>s</code> 的元素追加到切片后面并且返回新的切片；追加的元素必须和原切片的元素是同类型。如果 <code>s</code> 的容量不足以存储新增元素，<code>append()</code> 会分配新的切片来保证已有切片元素和新增元素的存储。因此，返回的切片可能已经指向一个不同的相关数组了。<code>append()</code> 方法总是返回成功，除非系统内存耗尽了。</p></blockquote> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">for</span> ix<span class="token punctuation">,</span> value <span class="token operator">:=</span> <span class="token keyword">range</span> slice1 <span class="token punctuation">{</span>
+	<span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>第一个返回值 <code>ix</code> 是数组或者切片的索引，第二个是在该索引位置的值；他们都是仅在 <code>for</code> 循环内部可见的局部变量。<code>value</code> 只是 <code>slice1</code> 某个索引位置的值的一个拷贝，不能用来修改 <code>slice1</code> 该索引位置的值。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">a minute ago</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/go/GO入门指南/《Go入门指南》.html" class="prev">
+        《Go入门指南》
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><canvas id="vuepress-canvas-cursor"></canvas><!----><!----></div></div>
+    <script src="/assets/js/app.a31f4491.js" defer></script><script src="/assets/js/2.d0525731.js" defer></script><script src="/assets/js/11.8bf17a59.js" defer></script>
+  </body>
+</html>
