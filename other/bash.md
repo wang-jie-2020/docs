@@ -81,6 +81,8 @@ build_image_tag=${build_tar_name%%.*}		右边最后一个.之后的不要
 build_image_tag=${build_image_tag##*-}		坐标最后一个-之前的不要
 ```
 
+## 时间戳
+
 ```bash
 $(date +%Y%m%d%H%M%S)
 ```
