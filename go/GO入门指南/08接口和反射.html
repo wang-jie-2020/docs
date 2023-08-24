@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>接口和反射 | 📖Documents</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <script src="/docs/live2d/L2Dwidget.min.js"></script>
+    <script>
+            const models = [
+                '/live2d/live2d-widget-model-epsilon2_1/assets/Epsilon2.1.model.json',
+                '/live2d/live2d-widget-model-haru/01/assets/haru01.model.json',
+                '/live2d/live2d-widget-model-haru/02/assets/haru02.model.json',
+                '/live2d/live2d-widget-model-haruto/assets/haruto.model.json',
+                '/live2d/live2d-widget-model-koharu/assets/koharu.model.json',
+                '/live2d/live2d-widget-model-hijiki/assets/hijiki.model.json',
+                '/live2d/live2d-widget-model-tororo/assets/tororo.model.json',
+                '/live2d/live2d-widget-model-izumi/assets/izumi.model.json',
+                '/live2d/live2d-widget-model-miku/assets/miku.model.json',
+                '/live2d/live2d-widget-model-shizuku/assets/shizuku.model.json',
+                '/live2d/live2d-widget-model-wanko/assets/wanko.model.json',
+                '/live2d/live2d-widget-model-z16/assets/z16.model.json'
+            ];
+            L2Dwidget.init({
+                "model": {
+                    jsonPath: models[parseInt(Math.random() * (models.length))]
+                },
+                "display": {
+                    "position": "left",
+                    "width": 150,
+                    "height": 210,
+                    "hOffset": 5,
+                    "vOffset": 5,
+                    "superSample": 1,
+                },
+                "mobile": {
+                    "scale": 1,
+                    "show": true,
+                    "motion": true,
+                },
+                "react": {
+                    "opacityDefault": .5,
+                    "opacityOnHover": .2
+                }
+            });
+        </script>
+    <meta name="description" content="hello world">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.dbb90480.css" as="style"><link rel="preload" href="/docs/assets/js/app.df59d35d.js" as="script"><link rel="preload" href="/docs/assets/js/2.761c74f1.js" as="script"><link rel="preload" href="/docs/assets/js/1.259ade34.js" as="script"><link rel="preload" href="/docs/assets/js/30.80489400.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.73ade480.js"><link rel="prefetch" href="/docs/assets/js/11.ac316871.js"><link rel="prefetch" href="/docs/assets/js/12.aee35fb8.js"><link rel="prefetch" href="/docs/assets/js/13.7a0922d7.js"><link rel="prefetch" href="/docs/assets/js/14.835a8e05.js"><link rel="prefetch" href="/docs/assets/js/15.510b48fa.js"><link rel="prefetch" href="/docs/assets/js/16.1e71da12.js"><link rel="prefetch" href="/docs/assets/js/17.87b4969b.js"><link rel="prefetch" href="/docs/assets/js/18.be99a0bd.js"><link rel="prefetch" href="/docs/assets/js/19.9e893a70.js"><link rel="prefetch" href="/docs/assets/js/20.a0110bb4.js"><link rel="prefetch" href="/docs/assets/js/21.1fa73134.js"><link rel="prefetch" href="/docs/assets/js/22.a018444f.js"><link rel="prefetch" href="/docs/assets/js/23.0922780a.js"><link rel="prefetch" href="/docs/assets/js/24.51b85d4b.js"><link rel="prefetch" href="/docs/assets/js/25.3318aa98.js"><link rel="prefetch" href="/docs/assets/js/26.abc07a2d.js"><link rel="prefetch" href="/docs/assets/js/27.a29fb258.js"><link rel="prefetch" href="/docs/assets/js/28.46e6a9cd.js"><link rel="prefetch" href="/docs/assets/js/29.f0c85b5a.js"><link rel="prefetch" href="/docs/assets/js/3.ee2f80a4.js"><link rel="prefetch" href="/docs/assets/js/31.56c074a3.js"><link rel="prefetch" href="/docs/assets/js/32.71d736b4.js"><link rel="prefetch" href="/docs/assets/js/33.afd122b4.js"><link rel="prefetch" href="/docs/assets/js/34.ab101462.js"><link rel="prefetch" href="/docs/assets/js/35.aaee900c.js"><link rel="prefetch" href="/docs/assets/js/36.cc125e23.js"><link rel="prefetch" href="/docs/assets/js/37.5aaa69fd.js"><link rel="prefetch" href="/docs/assets/js/38.2d9d5dcb.js"><link rel="prefetch" href="/docs/assets/js/39.16ef0548.js"><link rel="prefetch" href="/docs/assets/js/4.49722720.js"><link rel="prefetch" href="/docs/assets/js/40.62c312c3.js"><link rel="prefetch" href="/docs/assets/js/41.456b1459.js"><link rel="prefetch" href="/docs/assets/js/42.1c40fdae.js"><link rel="prefetch" href="/docs/assets/js/43.670e0faa.js"><link rel="prefetch" href="/docs/assets/js/44.a9a8efad.js"><link rel="prefetch" href="/docs/assets/js/45.57b0a091.js"><link rel="prefetch" href="/docs/assets/js/46.e47d714b.js"><link rel="prefetch" href="/docs/assets/js/47.6c14e670.js"><link rel="prefetch" href="/docs/assets/js/48.86dc014e.js"><link rel="prefetch" href="/docs/assets/js/49.1d6d7849.js"><link rel="prefetch" href="/docs/assets/js/5.12ef4795.js"><link rel="prefetch" href="/docs/assets/js/50.3f8201e2.js"><link rel="prefetch" href="/docs/assets/js/51.30e537fb.js"><link rel="prefetch" href="/docs/assets/js/52.2d613256.js"><link rel="prefetch" href="/docs/assets/js/53.033441cd.js"><link rel="prefetch" href="/docs/assets/js/54.299cb25e.js"><link rel="prefetch" href="/docs/assets/js/55.451b2047.js"><link rel="prefetch" href="/docs/assets/js/56.f03712a5.js"><link rel="prefetch" href="/docs/assets/js/57.374620c7.js"><link rel="prefetch" href="/docs/assets/js/58.983727fe.js"><link rel="prefetch" href="/docs/assets/js/59.013f88c8.js"><link rel="prefetch" href="/docs/assets/js/6.78bc6f6b.js"><link rel="prefetch" href="/docs/assets/js/60.9a520636.js"><link rel="prefetch" href="/docs/assets/js/61.0f4e8c47.js"><link rel="prefetch" href="/docs/assets/js/62.00758f05.js"><link rel="prefetch" href="/docs/assets/js/63.307117a4.js"><link rel="prefetch" href="/docs/assets/js/64.265fd416.js"><link rel="prefetch" href="/docs/assets/js/65.7e9c0bd5.js"><link rel="prefetch" href="/docs/assets/js/66.e60fefcd.js"><link rel="prefetch" href="/docs/assets/js/67.bb70e974.js"><link rel="prefetch" href="/docs/assets/js/7.7f644f87.js"><link rel="prefetch" href="/docs/assets/js/vendors~docsearch.cf079a49.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.dbb90480.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">📖Documents</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术栈" class="mobile-dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/net/" class="nav-link">
+  net
+</a></li><li class="dropdown-item"><!----> <a href="/docs/go/" class="nav-link router-link-active">
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/" class="nav-link">
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/other/" class="nav-link">
+  other
+</a></li><li class="dropdown-item"><!----> <a href="/docs/note/" class="nav-link">
+  note
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="github" class="dropdown-title"><span class="title">github</span> <span class="arrow down"></span></button> <button type="button" aria-label="github" class="mobile-dropdown-title"><span class="title">github</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/wang-jie-2020/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github.com
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术栈" class="mobile-dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/net/" class="nav-link">
+  net
+</a></li><li class="dropdown-item"><!----> <a href="/docs/go/" class="nav-link router-link-active">
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/" class="nav-link">
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/other/" class="nav-link">
+  other
+</a></li><li class="dropdown-item"><!----> <a href="/docs/note/" class="nav-link">
+  note
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="github" class="dropdown-title"><span class="title">github</span> <span class="arrow down"></span></button> <button type="button" aria-label="github" class="mobile-dropdown-title"><span class="title">github</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/wang-jie-2020/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github.com
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>GO入门指南</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/go/GO入门指南/01零散记录.html" class="sidebar-link">01零散记录</a></li><li><a href="/docs/go/GO入门指南/02控制结构.html" class="sidebar-link">02控制结构</a></li><li><a href="/docs/go/GO入门指南/03函数.html" class="sidebar-link">03函数</a></li><li><a href="/docs/go/GO入门指南/04数组和切片.html" class="sidebar-link">04数组和切片</a></li><li><a href="/docs/go/GO入门指南/05map.html" class="sidebar-link">05map</a></li><li><a href="/docs/go/GO入门指南/06包.html" class="sidebar-link">06包</a></li><li><a href="/docs/go/GO入门指南/07结构.html" class="sidebar-link">07结构</a></li><li><a href="/docs/go/GO入门指南/08接口和反射.html" class="active sidebar-link">08接口和反射</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/go/GO入门指南/08接口和反射.html#接口" class="sidebar-link">接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/go/GO入门指南/08接口和反射.html#类型断言" class="sidebar-link">类型断言</a></li><li class="sidebar-sub-header"><a href="/docs/go/GO入门指南/08接口和反射.html#使用方法集与接口" class="sidebar-link">使用方法集与接口</a></li><li class="sidebar-sub-header"><a href="/docs/go/GO入门指南/08接口和反射.html#空接口" class="sidebar-link">空接口</a></li></ul></li><li class="sidebar-sub-header"><a href="/docs/go/GO入门指南/08接口和反射.html#反射" class="sidebar-link">反射</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/go/GO入门指南/08接口和反射.html#反射结构" class="sidebar-link">反射结构</a></li></ul></li></ul></li><li><a href="/docs/go/GO入门指南/09错误处理与测试.html" class="sidebar-link">09错误处理与测试</a></li><li><a href="/docs/go/GO入门指南/10协程 (goroutine) 与通道 (channel).html" class="sidebar-link">10协程 (goroutine) 与通道 (channel)</a></li><li><a href="/docs/go/GO入门指南/11web.html" class="sidebar-link">11web</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="接口和反射"><a href="#接口和反射" class="header-anchor">#</a> 接口和反射</h1> <h2 id="接口"><a href="#接口" class="header-anchor">#</a> 接口</h2> <p>接口只包含方法,,它被隐式地实现.即类型不需要显式声明实现了某接口,只要它实现了接口的方法,就认为实现了接口.</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> Namer <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">Method1</span><span class="token punctuation">(</span>param_list<span class="token punctuation">)</span> return_type
+    <span class="token function">Method2</span><span class="token punctuation">(</span>param_list<span class="token punctuation">)</span> return_type
+    <span class="token operator">...</span>
+    
+    <span class="token function">Area</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">float32</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> Shaper <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	<span class="token function">Area</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">float32</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Square <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	side <span class="token builtin">float32</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Circle <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	radius <span class="token builtin">float32</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>sq <span class="token operator">*</span>Square<span class="token punctuation">)</span> <span class="token function">Area</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">float32</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> sq<span class="token punctuation">.</span>side <span class="token operator">*</span> sq<span class="token punctuation">.</span>side
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>ci <span class="token operator">*</span>Circle<span class="token punctuation">)</span> <span class="token function">Area</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">float32</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> ci<span class="token punctuation">.</span>radius <span class="token operator">*</span> ci<span class="token punctuation">.</span>radius <span class="token operator">*</span> math<span class="token punctuation">.</span>Pi
+<span class="token punctuation">}</span>
+
+sq1 <span class="token operator">:=</span> <span class="token function">new</span><span class="token punctuation">(</span>Square<span class="token punctuation">)</span>
+sq1<span class="token punctuation">.</span>side <span class="token operator">=</span> <span class="token number">5</span>
+
+ci1 <span class="token operator">:=</span> <span class="token function">new</span><span class="token punctuation">(</span>Circle<span class="token punctuation">)</span>
+ci1<span class="token punctuation">.</span>radius <span class="token operator">=</span> <span class="token number">5</span>
+
+<span class="token comment">//接口类型可以包含一个实例的引用,该实例的类型实现了接口</span>
+<span class="token keyword">var</span> areaIntf Shaper
+areaIntf <span class="token operator">=</span> sq1
+areaIntf<span class="token punctuation">.</span><span class="token function">Area</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">//多态实现</span>
+areaIntf <span class="token operator">=</span> ci1
+areaIntf<span class="token punctuation">.</span><span class="token function">Area</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><p>一个接口可以被多个类型实现,这就是Go的多态实现.类型可以实现多个接口,接口同样可以嵌套.</p> <h3 id="类型断言"><a href="#类型断言" class="header-anchor">#</a> 类型断言</h3> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">if</span> <span class="token boolean">_</span><span class="token punctuation">,</span> ok <span class="token operator">:=</span> varI<span class="token punctuation">.</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span> ok <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//接上例,判断接口对象是不是指向Square</span>
+<span class="token keyword">if</span> t<span class="token punctuation">,</span> ok <span class="token operator">:=</span> areaIntf<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token operator">*</span>Square<span class="token punctuation">)</span><span class="token punctuation">;</span> ok <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;The type of areaIntf is: %T\n&quot;</span><span class="token punctuation">,</span> t<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>基于类型断言,可以通过type-switch实现类型判断</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">switch</span> t <span class="token operator">:=</span> areaIntf<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token keyword">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">case</span> <span class="token operator">*</span>Square<span class="token punctuation">:</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;Type Square %T with value %v\n&quot;</span><span class="token punctuation">,</span> t<span class="token punctuation">,</span> t<span class="token punctuation">)</span>
+<span class="token keyword">case</span> <span class="token operator">*</span>Circle<span class="token punctuation">:</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;Type Circle %T with value %v\n&quot;</span><span class="token punctuation">,</span> t<span class="token punctuation">,</span> t<span class="token punctuation">)</span>
+<span class="token keyword">case</span> <span class="token boolean">nil</span><span class="token punctuation">:</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;nil value: nothing to check?\n&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">default</span><span class="token punctuation">:</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;Unexpected type %T\n&quot;</span><span class="token punctuation">,</span> t<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>测试一个值是否实现了接口:</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> Stringer <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">if</span> sv<span class="token punctuation">,</span> ok <span class="token operator">:=</span> v<span class="token punctuation">.</span><span class="token punctuation">(</span>Stringer<span class="token punctuation">)</span><span class="token punctuation">;</span> ok <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;v implements String(): %s\n&quot;</span><span class="token punctuation">,</span> sv<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// note: sv, not v</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="使用方法集与接口"><a href="#使用方法集与接口" class="header-anchor">#</a> 使用方法集与接口</h3> <blockquote><p>Go 语言规范定义了接口方法集的调用规则：</p> <ul><li>类型 <code>*T</code> 的可调用方法集包含接受者为 <code>*T</code> 或 <code>T</code> 的所有方法集</li> <li>类型 <code>T</code> 的可调用方法集包含接受者为 <code>T</code> 的所有方法</li> <li>类型 <code>T</code> 的可调用方法集<strong>不</strong>包含接受者为 <code>*T</code> 的方法</li></ul></blockquote> <p><em>如果存在这种规则,为什么还要接受非指针T的方法?</em></p> <h3 id="空接口"><a href="#空接口" class="header-anchor">#</a> 空接口</h3> <p>可以理解object的超集概念,表示任何一种类型.</p> <h2 id="反射"><a href="#反射" class="header-anchor">#</a> 反射</h2> <blockquote><p>实际上，反射是通过检查一个接口的值，变量首先被转换成空接口。这从下面两个函数签名能够很明显的看出来：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">TypeOf</span><span class="token punctuation">(</span>i <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> Type
+
+<span class="token keyword">func</span> <span class="token function">ValueOf</span><span class="token punctuation">(</span>i <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> Value
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>接口的值包含一个 type 和 value。</p> <p>反射可以从接口值反射到对象，也可以从对象反射回接口值。</p> <p><code>reflect.Type</code> 和 <code>reflect.Value</code> 都有许多方法用于检查和操作它们。一个重要的例子是 <code>Value</code> 有一个 <code>Type()</code> 方法返回 <code>reflect.Value</code> 的 <code>Type</code> 类型。另一个是 <code>Type</code> 和 <code>Value</code> 都有 <code>Kind()</code> 方法返回一个常量来表示类型：<code>Uint</code>、<code>Float64</code>、<code>Slice</code> 等等。同样 <code>Value</code> 有叫做 <code>Int()</code> 和 <code>Float()</code> 的方法可以获取存储在内部的值（跟 <code>int64</code> 和 <code>float64</code> 一样）</p></blockquote> <p><code>Kind()</code> 总是返回底层类型</p> <p>变量 <code>v</code> 的 <code>Interface()</code> 方法可以得到还原（接口）值，所以可以这样打印 <code>v</code> 的值：<code>fmt.Println(v.Interface())</code></p> <h3 id="反射结构"><a href="#反射结构" class="header-anchor">#</a> 反射结构</h3> <blockquote><p><code>NumField()</code> 方法返回结构内的字段数量；通过一个 <code>for</code> 循环用索引取得每个字段的值 <code>Field(i)</code>。</p> <p>我们同样能够调用签名在结构上的方法，例如，使用索引 <code>n</code> 来调用：<code>Method(n).Call(nil)</code>。</p></blockquote></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">a minute ago</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/go/GO入门指南/07结构.html" class="prev">
+        07结构
+      </a></span> <span class="next"><a href="/docs/go/GO入门指南/09错误处理与测试.html">
+        09错误处理与测试
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><canvas id="vuepress-canvas-cursor"></canvas><!----><!----></div></div>
+    <script src="/docs/assets/js/app.df59d35d.js" defer></script><script src="/docs/assets/js/2.761c74f1.js" defer></script><script src="/docs/assets/js/1.259ade34.js" defer></script><script src="/docs/assets/js/30.80489400.js" defer></script>
+  </body>
+</html>

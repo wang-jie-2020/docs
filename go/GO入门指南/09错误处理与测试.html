@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>错误处理与测试 | 📖Documents</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <script src="/docs/live2d/L2Dwidget.min.js"></script>
+    <script>
+            const models = [
+                '/live2d/live2d-widget-model-epsilon2_1/assets/Epsilon2.1.model.json',
+                '/live2d/live2d-widget-model-haru/01/assets/haru01.model.json',
+                '/live2d/live2d-widget-model-haru/02/assets/haru02.model.json',
+                '/live2d/live2d-widget-model-haruto/assets/haruto.model.json',
+                '/live2d/live2d-widget-model-koharu/assets/koharu.model.json',
+                '/live2d/live2d-widget-model-hijiki/assets/hijiki.model.json',
+                '/live2d/live2d-widget-model-tororo/assets/tororo.model.json',
+                '/live2d/live2d-widget-model-izumi/assets/izumi.model.json',
+                '/live2d/live2d-widget-model-miku/assets/miku.model.json',
+                '/live2d/live2d-widget-model-shizuku/assets/shizuku.model.json',
+                '/live2d/live2d-widget-model-wanko/assets/wanko.model.json',
+                '/live2d/live2d-widget-model-z16/assets/z16.model.json'
+            ];
+            L2Dwidget.init({
+                "model": {
+                    jsonPath: models[parseInt(Math.random() * (models.length))]
+                },
+                "display": {
+                    "position": "left",
+                    "width": 150,
+                    "height": 210,
+                    "hOffset": 5,
+                    "vOffset": 5,
+                    "superSample": 1,
+                },
+                "mobile": {
+                    "scale": 1,
+                    "show": true,
+                    "motion": true,
+                },
+                "react": {
+                    "opacityDefault": .5,
+                    "opacityOnHover": .2
+                }
+            });
+        </script>
+    <meta name="description" content="hello world">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.dbb90480.css" as="style"><link rel="preload" href="/docs/assets/js/app.df59d35d.js" as="script"><link rel="preload" href="/docs/assets/js/2.761c74f1.js" as="script"><link rel="preload" href="/docs/assets/js/1.259ade34.js" as="script"><link rel="preload" href="/docs/assets/js/31.56c074a3.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.73ade480.js"><link rel="prefetch" href="/docs/assets/js/11.ac316871.js"><link rel="prefetch" href="/docs/assets/js/12.aee35fb8.js"><link rel="prefetch" href="/docs/assets/js/13.7a0922d7.js"><link rel="prefetch" href="/docs/assets/js/14.835a8e05.js"><link rel="prefetch" href="/docs/assets/js/15.510b48fa.js"><link rel="prefetch" href="/docs/assets/js/16.1e71da12.js"><link rel="prefetch" href="/docs/assets/js/17.87b4969b.js"><link rel="prefetch" href="/docs/assets/js/18.be99a0bd.js"><link rel="prefetch" href="/docs/assets/js/19.9e893a70.js"><link rel="prefetch" href="/docs/assets/js/20.a0110bb4.js"><link rel="prefetch" href="/docs/assets/js/21.1fa73134.js"><link rel="prefetch" href="/docs/assets/js/22.a018444f.js"><link rel="prefetch" href="/docs/assets/js/23.0922780a.js"><link rel="prefetch" href="/docs/assets/js/24.51b85d4b.js"><link rel="prefetch" href="/docs/assets/js/25.3318aa98.js"><link rel="prefetch" href="/docs/assets/js/26.abc07a2d.js"><link rel="prefetch" href="/docs/assets/js/27.a29fb258.js"><link rel="prefetch" href="/docs/assets/js/28.46e6a9cd.js"><link rel="prefetch" href="/docs/assets/js/29.f0c85b5a.js"><link rel="prefetch" href="/docs/assets/js/3.ee2f80a4.js"><link rel="prefetch" href="/docs/assets/js/30.80489400.js"><link rel="prefetch" href="/docs/assets/js/32.71d736b4.js"><link rel="prefetch" href="/docs/assets/js/33.afd122b4.js"><link rel="prefetch" href="/docs/assets/js/34.ab101462.js"><link rel="prefetch" href="/docs/assets/js/35.aaee900c.js"><link rel="prefetch" href="/docs/assets/js/36.cc125e23.js"><link rel="prefetch" href="/docs/assets/js/37.5aaa69fd.js"><link rel="prefetch" href="/docs/assets/js/38.2d9d5dcb.js"><link rel="prefetch" href="/docs/assets/js/39.16ef0548.js"><link rel="prefetch" href="/docs/assets/js/4.49722720.js"><link rel="prefetch" href="/docs/assets/js/40.62c312c3.js"><link rel="prefetch" href="/docs/assets/js/41.456b1459.js"><link rel="prefetch" href="/docs/assets/js/42.1c40fdae.js"><link rel="prefetch" href="/docs/assets/js/43.670e0faa.js"><link rel="prefetch" href="/docs/assets/js/44.a9a8efad.js"><link rel="prefetch" href="/docs/assets/js/45.57b0a091.js"><link rel="prefetch" href="/docs/assets/js/46.e47d714b.js"><link rel="prefetch" href="/docs/assets/js/47.6c14e670.js"><link rel="prefetch" href="/docs/assets/js/48.86dc014e.js"><link rel="prefetch" href="/docs/assets/js/49.1d6d7849.js"><link rel="prefetch" href="/docs/assets/js/5.12ef4795.js"><link rel="prefetch" href="/docs/assets/js/50.3f8201e2.js"><link rel="prefetch" href="/docs/assets/js/51.30e537fb.js"><link rel="prefetch" href="/docs/assets/js/52.2d613256.js"><link rel="prefetch" href="/docs/assets/js/53.033441cd.js"><link rel="prefetch" href="/docs/assets/js/54.299cb25e.js"><link rel="prefetch" href="/docs/assets/js/55.451b2047.js"><link rel="prefetch" href="/docs/assets/js/56.f03712a5.js"><link rel="prefetch" href="/docs/assets/js/57.374620c7.js"><link rel="prefetch" href="/docs/assets/js/58.983727fe.js"><link rel="prefetch" href="/docs/assets/js/59.013f88c8.js"><link rel="prefetch" href="/docs/assets/js/6.78bc6f6b.js"><link rel="prefetch" href="/docs/assets/js/60.9a520636.js"><link rel="prefetch" href="/docs/assets/js/61.0f4e8c47.js"><link rel="prefetch" href="/docs/assets/js/62.00758f05.js"><link rel="prefetch" href="/docs/assets/js/63.307117a4.js"><link rel="prefetch" href="/docs/assets/js/64.265fd416.js"><link rel="prefetch" href="/docs/assets/js/65.7e9c0bd5.js"><link rel="prefetch" href="/docs/assets/js/66.e60fefcd.js"><link rel="prefetch" href="/docs/assets/js/67.bb70e974.js"><link rel="prefetch" href="/docs/assets/js/7.7f644f87.js"><link rel="prefetch" href="/docs/assets/js/vendors~docsearch.cf079a49.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.dbb90480.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">📖Documents</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术栈" class="mobile-dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/net/" class="nav-link">
+  net
+</a></li><li class="dropdown-item"><!----> <a href="/docs/go/" class="nav-link router-link-active">
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/" class="nav-link">
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/other/" class="nav-link">
+  other
+</a></li><li class="dropdown-item"><!----> <a href="/docs/note/" class="nav-link">
+  note
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="github" class="dropdown-title"><span class="title">github</span> <span class="arrow down"></span></button> <button type="button" aria-label="github" class="mobile-dropdown-title"><span class="title">github</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/wang-jie-2020/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github.com
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术栈" class="dropdown-title"><span class="title">技术栈</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术栈" class="mobile-dropdown-title"><span class="title">技术栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/net/" class="nav-link">
+  net
+</a></li><li class="dropdown-item"><!----> <a href="/docs/go/" class="nav-link router-link-active">
+  go
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/" class="nav-link">
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/other/" class="nav-link">
+  other
+</a></li><li class="dropdown-item"><!----> <a href="/docs/note/" class="nav-link">
+  note
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="github" class="dropdown-title"><span class="title">github</span> <span class="arrow down"></span></button> <button type="button" aria-label="github" class="mobile-dropdown-title"><span class="title">github</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/wang-jie-2020/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github.com
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>GO入门指南</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/go/GO入门指南/01零散记录.html" class="sidebar-link">01零散记录</a></li><li><a href="/docs/go/GO入门指南/02控制结构.html" class="sidebar-link">02控制结构</a></li><li><a href="/docs/go/GO入门指南/03函数.html" class="sidebar-link">03函数</a></li><li><a href="/docs/go/GO入门指南/04数组和切片.html" class="sidebar-link">04数组和切片</a></li><li><a href="/docs/go/GO入门指南/05map.html" class="sidebar-link">05map</a></li><li><a href="/docs/go/GO入门指南/06包.html" class="sidebar-link">06包</a></li><li><a href="/docs/go/GO入门指南/07结构.html" class="sidebar-link">07结构</a></li><li><a href="/docs/go/GO入门指南/08接口和反射.html" class="sidebar-link">08接口和反射</a></li><li><a href="/docs/go/GO入门指南/09错误处理与测试.html" class="active sidebar-link">09错误处理与测试</a></li><li><a href="/docs/go/GO入门指南/10协程 (goroutine) 与通道 (channel).html" class="sidebar-link">10协程 (goroutine) 与通道 (channel)</a></li><li><a href="/docs/go/GO入门指南/11web.html" class="sidebar-link">11web</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="错误处理与测试"><a href="#错误处理与测试" class="header-anchor">#</a> 错误处理与测试</h1> <p>defer-panic-and-recover</p> <p>Go 有一个预先定义的 error 接口类型</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> <span class="token builtin">error</span> <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	<span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="language-go line-numbers-mode"><pre class="language-go"><code>err <span class="token operator">:=</span> errors<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">&quot;math - square root of negative number&quot;</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>发生错误必须中止程序时，<code>panic()</code> 可以用于错误处理模式</p> <blockquote><p>Go panicking：</p> <p>在多层嵌套的函数调用中调用 <code>panic()</code>，可以马上中止当前函数的执行，所有的 <code>defer</code> 语句都会保证执行并把控制权交还给接收到 panic 的函数调用者。这样向上冒泡直到最顶层，并执行（每层的） <code>defer</code>，在栈顶处程序崩溃，并在命令行中用传给 <code>panic()</code> 的值报告错误情况：这个终止过程就是 <em>panicking</em>。</p> <p>标准库中有许多包含 <code>Must</code> 前缀的函数，像 <code>regexp.MustComplie()</code> 和 <code>template.Must()</code>；当正则表达式或模板中转入的转换字符串导致错误时，这些函数会 <code>panic()</code>。</p> <p>不能随意地用 <code>panic()</code> 中止程序，必须尽力补救错误让程序能继续执行。</p></blockquote> <blockquote><p>正如名字一样，这个 (<code>recover()</code>) 内建函数被用于从 panic 或错误场景中恢复：让程序可以从 panicking 重新获得控制权，停止终止过程进而恢复正常执行。</p> <p><code>recover</code> 只能在 <code>defer</code> 修饰的函数（参见 <a href="https://gitee.com/wangjie2020/the-way-to-go_ZH_CN/blob/master/eBook/06.4.md" target="_blank" rel="noopener noreferrer">6.4 节<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）中使用：用于取得 <code>panic()</code> 调用中传递过来的错误值，如果是正常执行，调用 <code>recover()</code> 会返回 <code>nil</code>，且没有其它效果。</p> <p>总结：<code>panic()</code> 会导致栈被展开直到 <code>defer</code> 修饰的 <code>recover()</code> 被调用或者程序中止。</p></blockquote></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">a minute ago</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/go/GO入门指南/08接口和反射.html" class="prev">
+        08接口和反射
+      </a></span> <span class="next"><a href="/docs/go/GO入门指南/10协程 (goroutine) 与通道 (channel).html">
+        10协程 (goroutine) 与通道 (channel)
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><canvas id="vuepress-canvas-cursor"></canvas><!----><!----></div></div>
+    <script src="/docs/assets/js/app.df59d35d.js" defer></script><script src="/docs/assets/js/2.761c74f1.js" defer></script><script src="/docs/assets/js/1.259ade34.js" defer></script><script src="/docs/assets/js/31.56c074a3.js" defer></script>
+  </body>
+</html>
