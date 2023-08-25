@@ -161,6 +161,18 @@ default: // no value ready to be received
 
 定时器 (`Timer`) 结构体看上去和计时器 (`Ticker`) 结构体的确很像（构造为 `NewTimer(d Duration)`），但是它只发送一次时间，在 `Dration d` 之后。`time.After(d)` 函数
 
+### 协程和恢复
+
+最佳实践是通过闭包
+
+```go
+defer func() {
+    if err := recover(); err != nil {
+        log.Printf("Work failed with %s in %v", err, work)
+    }
+}()
+```
+
 
 
 
