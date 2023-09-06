@@ -1,6 +1,6 @@
 Go的基础入门:
 
-​	GO入门之门 the-way-to-go
+​	the-way-to-go
 
 轻量化的框架Gin
 
@@ -10,7 +10,5 @@ Go的基础入门:
 
 ​	https://github.com/flipped-aurora/gin-vue-admin
 
-
-
-beego???不好评价
+WEB框架beego???不好评价
 
