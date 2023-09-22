@@ -1,4 +1,4 @@
-﻿---
+---
 home: true
 heroImage: /head.jpg
 heroText: Documents
