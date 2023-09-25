@@ -26,3 +26,16 @@ XML、JAVA、Annotation
 
 
 ![img](https://cdn.jsdelivr.net/gh/wang-jie-2020/images/spring-framework-ioc-source-51.png)
+
+
+
+bean注册的事件:
+
+​	InitializingBean
+
+```java
+public interface InitializingBean {
+    void afterPropertiesSet() throws Exception;
+}
+```
+
