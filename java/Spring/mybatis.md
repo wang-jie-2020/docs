@@ -1,3 +1,0 @@
-sqlsession getmapper commit
-
-map 

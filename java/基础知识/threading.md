@@ -85,7 +85,7 @@ new Thread(new Runnable() {
   ```
 
 ```java
-ExecutorService executor = Executors.newFixedThreadPool(1);\
+ExecutorService executor = Executors.newFixedThreadPool(1);
     
 //Future<?> submit(Runnable task);
 executor.submit(() -> {
