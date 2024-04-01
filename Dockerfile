@@ -3,6 +3,7 @@ WORKDIR /app
 
 COPY . .
 
+RUN yarn config set ignore-engines true
 RUN yarn install
 RUN yarn build
 
