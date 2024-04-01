@@ -1,10 +1,6 @@
-## lambda
+## [lambda](./lambda.md)
 
-[lambda](./lambda.md)
-
-## Thread
-
-[Thread](./threading.md)
+## [Thread](./threading.md)
 
 ## Stream
 
@@ -56,11 +52,23 @@ public @interface AopAnnotation {
 
 ### 注解与反射
 
+注解的示例：
+
+```java
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+@Documented
+@Inherited
+public @interface AopAnnotation {
+    boolean flag() default true;
+}
+```
+
+
+
 Class ... Type
 
 ClassLoader...
-
-
 
 getxxx 与 getDeclaredxxx()	private、public，sub、super。。。 
 

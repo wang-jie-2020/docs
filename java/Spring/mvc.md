@@ -1,5 +1,7 @@
 # mvc
 
+[toc]
+
 ## 1.配置
 
 ### 1.1.boot配置
@@ -90,16 +92,114 @@
 
 ## 2.请求管道
 
-[java-web](./java-web.md)
+[java-web](./03.java-web-mvc.md)
 
 [auth](./auth.md)
 
 ## 3.内容处理
 
-- static resource	
-- json
-- 响应封装
-- 错误封装
+- 静态资源	
+
+- 内容封装
+  - 响应封装：包装类型，比如AjaxResult.success(obj)
+
+  - 错误封装
+
+    @ControllerAdvice 
+
+    @RestControllerAdvice
+
+    ```java
+    @RestControllerAdvice
+    public class GlobalExceptionHandler {
+    
+        @ExceptionHandler(Exception.class)
+        public AjaxResult handleException(Exception e, HttpServletRequest request) {
+            String requestURI = request.getRequestURI();
+            return AjaxResult.error(e.getMessage());
+        }
+    
+        @ExceptionHandler(ServiceException.class)
+        public AjaxResult handleServiceException(ServiceException e, HttpServletRequest request) {
+            Integer code = e.getCode();
+            return code != null ? AjaxResult.error(code, e.getMessage()) : AjaxResult.error(e.getMessage());
+        }
+    
+        /**
+         * 请求路径中缺少必需的路径变量
+         */
+        @ExceptionHandler(MissingPathVariableException.class)
+        public AjaxResult handleMissingPathVariableException(MissingPathVariableException e, HttpServletRequest request)
+        {
+            String requestURI = request.getRequestURI();
+            return AjaxResult.error(String.format("请求路径中缺少必需的路径变量[%s]", e.getVariableName()));
+        }
+    
+        /**
+         * 请求参数类型不匹配
+         */
+        @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+        public AjaxResult handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException e, HttpServletRequest request)
+        {
+            String requestURI = request.getRequestURI();
+            return AjaxResult.error(String.format("请求参数类型不匹配，参数[%s]要求类型为：'%s'，但输入值为：'%s'", e.getName(), e.getRequiredType().getName(), e.getValue()));
+        }
+    
+        /**
+         * 自定义验证异常
+         */
+        @ExceptionHandler(BindException.class)
+        public AjaxResult handleBindException(BindException e)
+        {
+            String message = e.getAllErrors().get(0).getDefaultMessage();
+            return AjaxResult.error(message);
+        }
+    
+        /**
+         * 自定义验证异常
+         */
+        @ExceptionHandler(MethodArgumentNotValidException.class)
+        public Object handleMethodArgumentNotValidException(MethodArgumentNotValidException e)
+        {
+            String message = e.getBindingResult().getFieldError().getDefaultMessage();
+            return AjaxResult.error(message);
+        }
+    ```
+
+  - **@ModelAttribute**
+
+- 参数校验
+
+  @NotNull @NotBlank....   @Valid
+
+  ```java
+  @PostMapping("validation-error")
+  public void ThrowValidationError(@Validated @RequestBody ErrorInput input) {
+  
+  }
+  
+  @Data
+  public class ErrorInput {
+  
+      @NotNull(message = "not null")
+      @NotBlank(message = "not blank")
+      @Length(max = 5, message = "name <=5")
+      private String name;
+  }
+  
+  //如果需要分组时，定义空类EditValidationGroup、AddValidationGroup，感觉会很不好用
+  //@NotEmpty(message = "{user.msg.userId.notEmpty}", groups = {EditValidationGroup.class}) 
+  //@NotEmpty(message = "{user.msg.userId.notEmpty}", groups = {AddValidationGroup.class}) 
+  ```
+
 - 国际化
+
+  ```yml
+  spring:
+    # 资源信息
+    messages:
+      # 国际化资源文件路径
+      basename: i18n/messages
+  ```
 
 ## 4.ORM
