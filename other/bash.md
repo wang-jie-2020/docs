@@ -86,3 +86,5 @@ build_image_tag=${build_image_tag##*-}		坐标最后一个-之前的不要
 ```bash
 $(date +%Y%m%d%H%M%S)
 ```
+
+netstat -ano
