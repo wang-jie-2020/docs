@@ -1,7 +1,0 @@
-sqlsession 
-
-getmapper 
-
-commit
-
-map 
