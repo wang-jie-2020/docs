@@ -1,3 +1,7 @@
+![img](https://raw.gitcode.com/qq_36179938/images/raw/main/1720422663594-6499cc96-7ae2-42cb-a2e2-4aa829fd14e6.png)
+
+
+
 一、RESET
 
 不同的Option对于HEAD指针的重置都是一样的，不同的是对于工作区或暂存区的操作：
