@@ -1,5 +1,22 @@
 # Aspect
 
+![img](https://cdn.nlark.com/yuque/0/2024/png/1294764/1716183576554-76c1bdf0-dac0-48d8-8272-dd7f46afd488.png?x-oss-process=image%2Fformat%2Cwebp)
+
+
+
+| 注解名称        | 解释                                                         |
+| --------------- | ------------------------------------------------------------ |
+| @Aspect         | 用来定义一个切面。                                           |
+| @pointcut       | 用于定义切入点表达式。在使用时还需要定义一个包含名字和任意参数的方法签名来表示切入点名称，这个方法签名就是一个返回值为void，且方法体为空的普通方法。 |
+| @Before         | 用于定义前置通知，相当于BeforeAdvice。在使用时，通常需要指定一个value属性值，该属性值用于指定一个切入点表达式(可以是已有的切入点，也可以直接定义切入点表达式)。 |
+| @AfterReturning | 用于定义后置通知，相当于AfterReturningAdvice。在使用时可以指定pointcut / value和returning属性，其中pointcut / value这两个属性的作用一样，都用于指定切入点表达式。 |
+| @Around         | 用于定义环绕通知，相当于MethodInterceptor。在使用时需要指定一个value属性，该属性用于指定该通知被植入的切入点。 |
+| @After-Throwing | 用于定义异常通知来处理程序中未处理的异常，相当于ThrowAdvice。在使用时可指定pointcut / value和throwing属性。其中pointcut/value用于指定切入点表达式，而throwing属性值用于指定-一个形参名来表示Advice方法中可定义与此同名的形参，该形参可用于访问目标方法抛出的异常。 |
+| @After          | 用于定义最终final 通知，不管是否异常，该通知都会执行。使用时需要指定一个value属性，该属性用于指定该通知被植入的切入点。 |
+| @DeclareParents | 用于定义引介通知，相当于IntroductionInterceptor (不要求掌握)。 |
+
+## Aspect
+
 @Aspect 标记一个切片类(配合@Component)
 
 @PointCut 切点,在切入点上执行的增强处理主要有五个注解：
@@ -14,7 +31,11 @@
 
 ​	@Around 属于环绕增强，能控制切点执行前，执行后
 
-
+> 注：查到博客上说顺序是@Around->@Before->@Around->@After->@AfterReturning->@AfterThrowing
+>
+> 2.6.3实测顺序是 @Around->@Before->@AfterReturning->@After->@Around  以及 @Around->@Before->@AfterReturning->@After->@Around
+>
+> 虽然这点知识很没用，还是记录一下吧。。。
 
 ### PointCut
 
@@ -139,6 +160,85 @@ public AopAnnotation getAnnotation(ProceedingJoinPoint point) {
 }
 ```
 
+## 例子
 
+### LogAspect
 
+```java
+package learn.aop;
+
+import java.lang.annotation.*;
+
+/**
+ * 自定义操作日志记录注解
+ * 
+ * @author ruoyi
+ *
+ */
+@Target({ ElementType.PARAMETER, ElementType.METHOD })
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface LogAnnotation
+{
+    /**
+     * 模块
+     */
+    public String title() default "";
+}
+
+```
+
+```java
+package learn.aop;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.core.NamedThreadLocal;
+import org.springframework.stereotype.Component;
+
+/**
+ * 操作日志记录处理
+ *
+ * @author ruoyi
+ */
+@Aspect
+@Component
+public class LogAspect {
+    private static final Logger log = LoggerFactory.getLogger(LogAspect.class);
+
+    /**
+     * 处理请求前执行
+     */
+    @Before(value = "@annotation(controllerLog)")
+    public void boBefore(JoinPoint joinPoint, LogAnnotation controllerLog) {
+        log.info("@Before...{}", controllerLog.title());
+    }
+
+    /**
+     * 处理完请求后执行
+     *
+     * @param joinPoint 切点
+     */
+    @AfterReturning(pointcut = "@annotation(controllerLog)", returning = "jsonResult")
+    public void doAfterReturning(JoinPoint joinPoint, LogAnnotation controllerLog, Object jsonResult) {
+        log.info("@doAfterReturning...{}...{}", controllerLog.title(), jsonResult);
+    }
+
+    /**
+     * 拦截异常操作
+     *
+     * @param joinPoint 切点
+     * @param e         异常
+     */
+    @AfterThrowing(value = "@annotation(controllerLog)", throwing = "e")
+    public void doAfterThrowing(JoinPoint joinPoint, LogAnnotation controllerLog, Exception e) {
+        log.info("@AfterThrowing...{}...{}", controllerLog.title(), e.getMessage());
+    }
+}
+```
 
