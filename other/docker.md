@@ -32,3 +32,10 @@ vim default.json
 docker cp ./default.json onlyoffice:/etc/onlyoffice/documentserver/default.json
 
 supervisorctl restart all
+
+## nacodb
+
+docker run -d \
+  --name noco \
+  -p 8080:8080 \
+  nocodb/nocodb:latest
