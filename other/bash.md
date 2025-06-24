@@ -88,3 +88,5 @@ $(date +%Y%m%d%H%M%S)
 ```
 
 netstat -ano
+
+strace
