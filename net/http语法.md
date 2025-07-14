@@ -1,10 +1,6 @@
 .http 简易的REST客户端，现在的语法支持有点不一致
 
-
-
 ## VS
-
-`{{<request name>.(response|request).(body|headers).(*|JSONPath|XPath|<header name>)}}.`
 
 ```
 @host=http://127.0.0.1:19001
@@ -19,7 +15,8 @@ Content-Type: application/json
 
 GET {{host}}/api/system/account
 Content-Type: application/json
-Authorization: Bearer {{login.response.body.$.token}}
+Authorization: Bearer {{login.response.body.$.token}}	
+# `{{<request name>.(response|request).(body|headers).(*|JSONPath|XPath|<header name>)}}.`
 
 ###
 ```
