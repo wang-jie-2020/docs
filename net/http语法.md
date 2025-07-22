@@ -41,4 +41,3 @@ Authorization: Bearer {{auth_token}}
 
 ###
 ```
-

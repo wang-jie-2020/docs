@@ -85,3 +85,96 @@ Interceptor 由 Spring 自己定义，由DispatcherServlet调用，可以定义�
 
 ![image-20230920135430393](https://cdn.jsdelivr.net/gh/wang-jie-2020/images/image-20230920135430393.png)
 
+![这里写图片描述](https://raw.gitcode.com/qq_36179938/images/raw/main/e85969bbe62a4906e5803225beb350d5.png)
+
+### filter
+
+注意点:
+
+(1) 定义和挂载，init()中的参数来自于预先定义（XML 或者 FilterRegistrationBean）
+
+(2) 可以进行路径选择
+
+(3) 如果对Request的输入流读取（默认只允许读一次），则要考虑继承HttpServletRequestWrapper重播请求流
+
+```java
+public class XssFilter implements Filter
+{
+    /**
+     * 排除链接
+     */
+    public List<String> excludes = new ArrayList<>();
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException
+    {
+        String tempExcludes = filterConfig.getInitParameter("excludes");
+        if (StringUtils.isNotEmpty(tempExcludes))
+        {
+            String[] urls = tempExcludes.split(",");
+            for (String url : urls)
+            {
+                excludes.add(url);
+            }
+        }
+    }
+
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws IOException, ServletException
+    {
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse resp = (HttpServletResponse) response;
+        if (handleExcludeURL(req, resp))
+        {
+            chain.doFilter(request, response);
+            return;
+        }
+        XssHttpServletRequestWrapper xssRequest = new XssHttpServletRequestWrapper((HttpServletRequest) request);
+        chain.doFilter(xssRequest, response);
+    }
+
+    @Override
+    public void destroy()
+    {
+
+    }
+}
+```
+
+```java
+@Bean
+public FilterRegistrationBean xssFilterRegistration()
+{
+    FilterRegistrationBean registration = new FilterRegistrationBean();
+    registration.setFilter(new XssFilter());
+    registration.addUrlPatterns(urlPatterns.split(","));
+    registration.setName("xssFilter");
+    registration.setOrder(FilterRegistrationBean.HIGHEST_PRECEDENCE);
+    Map<String, String> initParameters = new HashMap<String, String>();
+    initParameters.put("excludes", excludes);
+    registration.setInitParameters(initParameters);
+    return registration;
+}
+```
+
+### interceptor
+
+```java
+@Configuration
+public class MvcConfig implements WebMvcConfigurer {
+    @Autowired
+    private XssInterceptor xssInterceptor;
+
+    /**
+     * 添加 Spring MVC 生命周期拦截器，用于控制器方法调用和资源处理器请求的预处理和后处理。
+     * 可以注册拦截器以应用于所有请求或仅限于 URL 模式的子集。
+     */
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(xssInterceptor)
+                .addPathPatterns("/interceptor/*");
+                //.addPathPatterns("/**");
+    }
+}
+```
+

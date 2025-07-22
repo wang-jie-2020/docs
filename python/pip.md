@@ -33,16 +33,4 @@
   通过将上述代码中的网址替换即可
   换完源后可通过`pip config get global.index-url`命令来查询
 
-  ### <font style="color:rgb(77, 77, 77);">conda换源</font>
-  ```bash
-   conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ 
-   conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-   conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
-   conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/mambaforge/
-  ```
-
-  **conda config --show channels**
-
-  **conda config --remove channels **
-
-  **conda config --remove-key channels**
+  
