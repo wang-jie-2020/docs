@@ -1,10 +1,10 @@
+```java
+@Configuration
+@EnableCaching
+public class RedisConfig extends CachingConfigurerSupport
+```
 
-
-
-
-
-
-Redis使用FastJson序列化
+## Redis使用FastJson序列化
 
 ```java
     @Bean
@@ -70,3 +70,6 @@ public class FastJson2JsonRedisSerializer<T> implements RedisSerializer<T>
 }
 ```
 
+## RedisScript
+
+TODO
