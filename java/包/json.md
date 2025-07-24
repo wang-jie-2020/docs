@@ -1,6 +1,6 @@
 # JSON
 
-### Jackson
+## Jackson
 
 ```xml
 <!-- **jackson-databind** 包含了 **jackson-annotations** **jackson-core** -->
@@ -10,39 +10,65 @@
 </dependency>
 ```
 
-#### **ObjectMapper**
+objectMapper.writeValueAsString(user);
 
-​	objectMapper.writeValueAsString(user);
-
-​	objectMapper.readValue(jsonString, User.class)；
+objectMapper.readValue(jsonString, User.class)；
 
 **注意**：如果实体的某个字段**没有提供 getter 方法**，则该字段**不会被序列化**
 
 
 
-#### 注解
+其他常见注解:
 
-@JsonProperty	控制输出
+​	控制输出:
 
-@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+​		@JsonProperty	
 
+​		@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 
+​	控制忽略:
 
-@JsonIgnore		控制忽略(一个 多个 类型)
+​		@JsonIgnore	
 
-@JsonIgnoreProperties
+​		@JsonIgnoreProperties
 
-@JsonIgnoreType
+​		@JsonIgnoreType
 
+​	SpringBoot中的定制:
 
+​		1. 通过配置方式可以修改行为
 
-#### 自定义
+​		2. Jackson2ObjectMapperBuilderCustomizer
 
-​	@JacksonAnnotationsInside
+```java
+// 来自百度
+@Configuration
+public class JacksonConfig implements Jackson2ObjectMapperBuilderCustomizer {
+ 
+    @Override
+    public void customize(Jackson2ObjectMapperBuilder builder) {
+        builder.dateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")); // 例如设置日期格式
+        builder.serializers(new YourCustomSerializer()); // 添加自定义序列化器
+        builder.deserializers(new YourCustomDeserializer()); // 添加自定义反序列化器
+        builder.modules(new YourCustomModule()); // 添加自定义模块
+    }
+}
 
-​	@JsonSerialize
+// 或者
 
-参见 com.ruoyi.common.annotation.Sensitive, com.ruoyi.common.config.serializer.SensitiveJsonSerializer
+@Bean
+public Jackson2ObjectMapperBuilderCustomizer jacksonObjectMapperCustomization()
+{
+    return jacksonObjectMapperBuilder -> jacksonObjectMapperBuilder.timeZone(TimeZone.getDefault());
+}
+
+```
+
+#### 例子:自定义注解控制输出(Sensitive敏感信息脱离)
+
+@JacksonAnnotationsInside  内联标记 --> 标记了@Sensitive 就像直接在那个元素上使用了 @JsonSerialize
+
+@JsonSerialize
 
 ```java
 Retention(RetentionPolicy.RUNTIME)
@@ -57,6 +83,12 @@ public @interface Sensitive
 ```
 
 ```java
+/**
+ * 数据脱敏序列化过滤
+ *   有个细节: 已经在需要特殊处理的字段上标注了@JsonSerialize(using = SensitiveJsonSerializer.class),为什么还需要ContextualSerializer?
+ *      尝试注释掉接口,一样可以断到..问题在于无法拿到注解
+ *
+ */
 public class SensitiveJsonSerializer extends JsonSerializer<String> implements ContextualSerializer
 {
     private DesensitizedType desensitizedType;
@@ -85,19 +117,7 @@ public class SensitiveJsonSerializer extends JsonSerializer<String> implements C
 
 
 
-Jackson2ObjectMapperBuilderCustomizer 定制序列化行为
-
-```java
-@Bean
-public Jackson2ObjectMapperBuilderCustomizer jacksonObjectMapperCustomization()
-{
-    return jacksonObjectMapperBuilder -> jacksonObjectMapperBuilder.timeZone(TimeZone.getDefault());
-}
-```
-
-
-
-### FastJson
+## FastJson2
 
 ```xml
 <dependency>
@@ -110,16 +130,28 @@ JSON.toJSONString()
 
 JSON.parse()
 
-#### 注解
-
-@JSONField(name=”resType”) 
-
-@JSONField(format=”yyyy-MM-dd”) 
-
-在Fastjson的早期版本中是会被Jasckson的注解影响的 https://github.com/alibaba/fastjson2/issues/716
 
 
+其他常见注解:
 
-FastJson提供了`SimplePropertyPreFilter`类，允许通过指定属性名来过滤字段。
+​	控制输出:
 
-参见 com.ruoyi.common.filter.PropertyPreExcludeFilter
+​		@JSONField(name=”resType”) 
+
+​		@JSONField(format=”yyyy-MM-dd”) 
+
+​	控制忽略:
+
+​		@JSONField(serialize = false)
+
+​	定制:
+
+​		toJSONString(Object object, Filter filter, JSONWriter.Feature... features) 函数签名中可以传递Filter
+
+​		比如SimplePropertyPreFilter，允许通过指定属性名来过滤字段。
+
+​		参见 com.ruoyi.common.filter.PropertyPreExcludeFilter
+
+
+
+*在Fastjson的早期版本中是会被Jasckson的注解影响的 https://github.com/alibaba/fastjson2/issues/716*

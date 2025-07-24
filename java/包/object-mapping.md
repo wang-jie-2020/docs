@@ -42,7 +42,7 @@
         PersonDTO personDTO = modelMapper.map(person, PersonDTO.class);
 ```
 
-MapStruct
+## MapStruct
 
 定义：
 MapStruct是一个基于约定优于配置原则的Java注解处理器，用于生成类型安全的bean映射类。
