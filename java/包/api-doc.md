@@ -1,5 +1,7 @@
 
 
+/swagger-ui/index.html
+
 
 
 | SpringFox                                   | SpringDoc                                                    |

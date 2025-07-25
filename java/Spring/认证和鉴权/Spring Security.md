@@ -8,7 +8,7 @@
 
 ## 处理链路
 
-## 认证
+### 认证过程
 
 ![img](https://cdn.jsdelivr.net/gh/wang-jie-2020/images/v2-700d7fdce90099c6f2d4c9873eaa5259_720w.webp)
 
@@ -16,7 +16,7 @@
 
 1. 请求经过Chain中过滤器, 构建出了一个Authentication(相当于Principal)
 2. AuthenticationManager 校验Authentication是否合法
-3. Success时,保存到SecurityContextHolder,执行成功处理
+3. Success时保存到SecurityContextHolder,执行成功处理
 4. Failure时,执行失败处理
 
 
@@ -33,9 +33,7 @@ AuthenticationManager如下:
 
 ![在这里插入图片描述](https://cdn.jsdelivr.net/gh/wang-jie-2020/images/a7013f51aa6d4cc88468e4d1ab93c888.png)
 
-也就是说具体的认证过程实际是 UserDetailsService
-
-如果认证通过, 信息会存入SecurityContextHolder 
+也就是说具体的认证过程实际是在 UserDetailsService. 如果认证通过, 信息会存入SecurityContextHolder 
 
 ![img](https://cdn.jsdelivr.net/gh/wang-jie-2020/images/v2-ccd782380492892f01fcdca08a5eebd7_720w.webp)
 
@@ -105,9 +103,15 @@ public class PermissionService {
 
 在这个过程之前的登录 可以通过实现UserDetailsService来进行验证过程(这不是强制必要的)
 
+## 跨域
 
+在spring-mvc中的WebMvcConfigurer.addCorsMappings()中可以做到跨域
 
+但一旦和SpringSecurity结合使用就不能正常运行,这个结果是因为SpringSecurity注册的过滤器拦截了跨域的预检请求(到不了spring中)
 
+1.不使用mvc的配置,而是通过CorsFilter的Bean 
+
+2.httpSecurity.addFilterBefore(corsFilter, JwtAuthenticationTokenFilter.class);
 
 
 
