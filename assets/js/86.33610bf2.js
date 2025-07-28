@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[86],{409:function(t,s,n){"use strict";n.r(s);var o=n(4),e=Object(o.a)({},(function(){var t=this._self._c;return t("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[t("p",[t("strong",[this._v("语雀的商业策略真垃圾")])]),this._v(" "),t("p",[this._v("有必要考虑怎么把语雀的文档拿出来")])])}),[],!1,null,null,null);s.default=e.exports}}]);
