@@ -242,3 +242,9 @@ public class LogAspect {
 }
 ```
 
+## 相关
+
+ `@EnableAspectJAutoProxy(exposeProxy = true)` ,这个注解的作用是Enable切片功能(如果是SpringBoot项目即使不写也默认生效)
+
+>springbootautoconfigure中包含了一个名为AopAutoConfiguration的类，该类的作用等同于在启动类上添加@EnableAspectJAutoProxy注解。因此，即使没有显式添加@EnableAspectJAutoProxy注解，AOP功能也可能因为AopAutoConfiguration类的存在而生效
+
