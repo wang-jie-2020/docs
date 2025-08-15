@@ -1,5 +1,3 @@
-# **Spring Security**
-
 ## 前置
 
 通过`DelegatingFilterProxy` 嵌入 `SecurityFilterChain`

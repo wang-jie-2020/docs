@@ -248,3 +248,10 @@ public class LogAspect {
 
 >springbootautoconfigure中包含了一个名为AopAutoConfiguration的类，该类的作用等同于在启动类上添加@EnableAspectJAutoProxy注解。因此，即使没有显式添加@EnableAspectJAutoProxy注解，AOP功能也可能因为AopAutoConfiguration类的存在而生效
 
+## 常见失效场景
+
+1. 内部调用
+
+   如果有必要, 通过AopContext获取当前代理 UserService proxy = (UserService) AopContext.currentProxy()
+
+2. 静态方法、final类或方法、private方法
