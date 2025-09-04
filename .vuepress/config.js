@@ -17,7 +17,7 @@ let sidebar_net = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'net/
 let sidebar_other = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'other/'), path.join(rootPath, 'other/'), unDirIncludes, SuffixIncludes, {})
 let sidebar_python = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'python/'), path.join(rootPath, 'python/'), unDirIncludes, SuffixIncludes, {})
 let sidebar_vue = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'vue/'), path.join(rootPath, 'vue/'), unDirIncludes, SuffixIncludes, {})
-let sidebar_theory = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, '理论/'), path.join(rootPath, '理论/'), unDirIncludes, SuffixIncludes, {})
+let sidebar_theory = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'theory/'), path.join(rootPath, '理论/'), unDirIncludes, SuffixIncludes, {})
 
 module.exports = {
     title: '📖Documents',
