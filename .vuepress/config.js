@@ -10,10 +10,14 @@ let unDirIncludes = ['node_modules', 'assets', 'public', 'images', 'media']
 let SuffixIncludes = ['.md', '.html']
 
 //使用方法生生成侧边栏
-let sidebar_net = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'net/'), path.join(rootPath, 'net/'), unDirIncludes, SuffixIncludes, {})
+let sidebar_db = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'db/'), path.join(rootPath, 'db/'), unDirIncludes, SuffixIncludes, {})
 let sidebar_go = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'go/'), path.join(rootPath, 'go/'), unDirIncludes, SuffixIncludes, {})
 let sidebar_java = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'java/'), path.join(rootPath, 'java/'), unDirIncludes, SuffixIncludes, {})
+let sidebar_net = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'net/'), path.join(rootPath, 'net/'), unDirIncludes, SuffixIncludes, {})
 let sidebar_other = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'other/'), path.join(rootPath, 'other/'), unDirIncludes, SuffixIncludes, {})
+let sidebar_python = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'python/'), path.join(rootPath, 'python/'), unDirIncludes, SuffixIncludes, {})
+let sidebar_vue = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'vue/'), path.join(rootPath, 'vue/'), unDirIncludes, SuffixIncludes, {})
+let sidebar_theory = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, '理论/'), path.join(rootPath, '理论/'), unDirIncludes, SuffixIncludes, {})
 
 module.exports = {
     title: '📖Documents',
@@ -126,19 +130,27 @@ module.exports = {
         smoothScroll: true,
         nav: [
             {
-                text: '技术栈',
+                text: '编程语言',
                 items: [
                     {
                         text: 'net',
                         link: '/net/'
                     },
                     {
+                        text: 'java',
+                        link: '/java/'
+                    },
+                    {
+                        text: 'python',
+                        link: '/python/'
+                    },
+                    {
                         text: 'go',
                         link: '/go/'
                     },
                     {
-                        text: 'java',
-                        link: '/java/'
+                        text: 'vue',
+                        link: '/vue/'
                     },
                     {
                         text: 'other',
@@ -147,8 +159,17 @@ module.exports = {
                     {
                         text: 'note',
                         link: '/note/'
-                    }
+                    },
+
                 ]
+            },
+            {
+                text: '数据库',
+                link: '/db/'
+            },
+            {
+                text: '理论',
+                link: '/theory/'
             },
             {
                 text: 'github',
@@ -162,8 +183,10 @@ module.exports = {
         ],
         sidebar: {
             '/net/': sidebar_net,
-            '/go/': sidebar_go,
             '/java/': sidebar_java,
+            '/python/': sidebar_python,
+            '/go/': sidebar_go,
+            '/vue/': sidebar_vue,
             '/other/': sidebar_other,
             '/note/': [
                 {
@@ -174,6 +197,8 @@ module.exports = {
                     ]
                 }
             ],
+            '/db/': sidebar_db,
+            '/theory/': sidebar_theory,
         }
     }
 }
