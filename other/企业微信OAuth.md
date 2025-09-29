@@ -62,6 +62,40 @@ oa ^c7GdnE4Q
 
 通外网 ^69ozNVeU
 
+access_token :  ^LOtHEpcw
+
+https://developer.work.weixin.qq.com/document/path/91039 ^QbNuSHuv
+
+https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=ID&corpsecret=SECRET ^RhNVFrcL
+
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=CORPID&redirect_uri=REDIRECT_URI&response_type=code&scope=snsapi_base&state=STATE&agentid=AGENTID#wechat_redirect
+
+
+
+示例URL
+
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=ww05bd1e6d1a6acb58&agentid=1000047&redirect_uri=https://tp.envision-aesc.cn:3443/work-order-h5/list&response_type=code&state=1000047&scope=snsapi_userinfo&connect_redirect=1#wechat_redirect
+
+
+
+伽利略URL:
+
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=ww05bd1e6d1a6acb58&redirect_uri=https://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/redirect.html&tagert=dasfs&response_type=code&scope=snsapi_base&state=work-order&agentid=1000116#wechat_redirect
+
+
+
+
+
+https://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/....
+
+​        -> http://10.206.121.15:31969/...
+
+
+
+https://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/api/....
+
+​        -> http://10.206.121.15:32649/api/... ^wKiOYbvb
+
 %%
 # Drawing
 ```json
@@ -153,8 +187,8 @@ oa ^c7GdnE4Q
 		},
 		{
 			"type": "arrow",
-			"version": 117,
-			"versionNonce": 976286908,
+			"version": 123,
+			"versionNonce": 258024119,
 			"isDeleted": false,
 			"id": "AXnYCO7HOtBstkQ-aN3kb",
 			"fillStyle": "hachure",
@@ -175,7 +209,7 @@ oa ^c7GdnE4Q
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1752550613677,
+			"updated": 1758074291351,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -390,8 +424,8 @@ oa ^c7GdnE4Q
 		},
 		{
 			"type": "arrow",
-			"version": 47,
-			"versionNonce": 1964164356,
+			"version": 53,
+			"versionNonce": 1824573497,
 			"isDeleted": false,
 			"id": "x_qtD7TC6tta0_iP-LMZZ",
 			"fillStyle": "hachure",
@@ -412,7 +446,7 @@ oa ^c7GdnE4Q
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1752550613677,
+			"updated": 1758074291351,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -509,8 +543,8 @@ oa ^c7GdnE4Q
 		},
 		{
 			"type": "arrow",
-			"version": 91,
-			"versionNonce": 257303300,
+			"version": 115,
+			"versionNonce": 74605497,
 			"isDeleted": false,
 			"id": "Jb_3mYLCJqEaVYC3H_oBp",
 			"fillStyle": "hachure",
@@ -531,7 +565,7 @@ oa ^c7GdnE4Q
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1752550613683,
+			"updated": 1758074291354,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -596,8 +630,8 @@ oa ^c7GdnE4Q
 		},
 		{
 			"type": "arrow",
-			"version": 82,
-			"versionNonce": 1378034308,
+			"version": 106,
+			"versionNonce": 197100697,
 			"isDeleted": false,
 			"id": "GN-Czn_XofTSsNfYFpetm",
 			"fillStyle": "hachure",
@@ -606,12 +640,12 @@ oa ^c7GdnE4Q
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 125.56786226830054,
+			"x": 125.56786226830371,
 			"y": -200.25,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 183.6191688753851,
-			"height": 117.62184087388255,
+			"width": 183.61916887538774,
+			"height": 117.62184087388253,
 			"seed": 804953911,
 			"groupIds": [],
 			"roundness": {
@@ -623,7 +657,7 @@ oa ^c7GdnE4Q
 					"id": "aGLSzXul"
 				}
 			],
-			"updated": 1752550613683,
+			"updated": 1758074291354,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -645,15 +679,15 @@ oa ^c7GdnE4Q
 					0
 				],
 				[
-					-183.6191688753851,
-					117.62184087388255
+					-183.61916887538774,
+					117.62184087388253
 				]
 			]
 		},
 		{
 			"type": "text",
-			"version": 64,
-			"versionNonce": 545951108,
+			"version": 65,
+			"versionNonce": 93638503,
 			"isDeleted": false,
 			"id": "aGLSzXul",
 			"fillStyle": "hachure",
@@ -662,7 +696,7 @@ oa ^c7GdnE4Q
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -59.67922216939202,
+			"x": -59.67922216939016,
 			"y": -153.43907956305873,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
@@ -672,7 +706,7 @@ oa ^c7GdnE4Q
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1752550613725,
+			"updated": 1757988170636,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1028,8 +1062,8 @@ oa ^c7GdnE4Q
 		},
 		{
 			"type": "arrow",
-			"version": 139,
-			"versionNonce": 9158788,
+			"version": 163,
+			"versionNonce": 1199566873,
 			"isDeleted": false,
 			"id": "PvKUPERCYZXeIHkxB5Flc",
 			"fillStyle": "hachure",
@@ -1038,19 +1072,19 @@ oa ^c7GdnE4Q
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -51.858599641496525,
+			"x": -51.8585996499704,
 			"y": 163.86875420525737,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 129.27345621190182,
-			"height": 95.84700985045336,
+			"width": 129.2734562203757,
+			"height": 95.84700985233499,
 			"seed": 1803562455,
 			"groupIds": [],
 			"roundness": {
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1752550613689,
+			"updated": 1758074291357,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1072,8 +1106,8 @@ oa ^c7GdnE4Q
 					0
 				],
 				[
-					129.27345621190182,
-					95.84700985045336
+					129.2734562203757,
+					95.84700985233499
 				]
 			]
 		},
@@ -1172,8 +1206,8 @@ oa ^c7GdnE4Q
 		},
 		{
 			"type": "arrow",
-			"version": 115,
-			"versionNonce": 1045909892,
+			"version": 139,
+			"versionNonce": 567800409,
 			"isDeleted": false,
 			"id": "GLeLhHiF-L_2E_3XYmKu7",
 			"fillStyle": "hachure",
@@ -1182,11 +1216,11 @@ oa ^c7GdnE4Q
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -63.28812806462393,
+			"x": -63.28812806515062,
 			"y": 3.3718408738825474,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 3.4399557142944843,
+			"width": 3.4399557146765076,
 			"height": 93.61374172252772,
 			"seed": 607641209,
 			"groupIds": [],
@@ -1194,7 +1228,7 @@ oa ^c7GdnE4Q
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1752550613687,
+			"updated": 1758074291356,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1216,15 +1250,15 @@ oa ^c7GdnE4Q
 					0
 				],
 				[
-					3.4399557142944843,
+					3.4399557146765076,
 					93.61374172252772
 				]
 			]
 		},
 		{
 			"type": "arrow",
-			"version": 27,
-			"versionNonce": 1869707708,
+			"version": 33,
+			"versionNonce": 1690925559,
 			"isDeleted": false,
 			"id": "arEQG3sODIC2j4ExbdCCd",
 			"fillStyle": "hachure",
@@ -1245,7 +1279,7 @@ oa ^c7GdnE4Q
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1752550613689,
+			"updated": 1758074291357,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1379,8 +1413,8 @@ oa ^c7GdnE4Q
 		},
 		{
 			"type": "arrow",
-			"version": 44,
-			"versionNonce": 951630780,
+			"version": 68,
+			"versionNonce": 1619871351,
 			"isDeleted": false,
 			"id": "LDIlXDEJO-08FOjMhkcbS",
 			"fillStyle": "hachure",
@@ -1406,7 +1440,7 @@ oa ^c7GdnE4Q
 					"id": "oOoI9Kej"
 				}
 			],
-			"updated": 1752550613691,
+			"updated": 1758074291358,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1471,8 +1505,8 @@ oa ^c7GdnE4Q
 		},
 		{
 			"type": "arrow",
-			"version": 23,
-			"versionNonce": 1169190788,
+			"version": 29,
+			"versionNonce": 1779662297,
 			"isDeleted": false,
 			"id": "yMUKFQK6iL96Cap_Bwvbm",
 			"fillStyle": "hachure",
@@ -1493,7 +1527,7 @@ oa ^c7GdnE4Q
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1752550613690,
+			"updated": 1758074291358,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1591,8 +1625,8 @@ oa ^c7GdnE4Q
 		},
 		{
 			"type": "arrow",
-			"version": 54,
-			"versionNonce": 908190780,
+			"version": 78,
+			"versionNonce": 975921047,
 			"isDeleted": false,
 			"id": "_VRgkZZpajTAhpnnpA_e-",
 			"fillStyle": "hachure",
@@ -1613,7 +1647,7 @@ oa ^c7GdnE4Q
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1752550613693,
+			"updated": 1758074291359,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1714,8 +1748,8 @@ oa ^c7GdnE4Q
 		},
 		{
 			"type": "arrow",
-			"version": 84,
-			"versionNonce": 1597276988,
+			"version": 90,
+			"versionNonce": 400197975,
 			"isDeleted": false,
 			"id": "ic9FjfnrRLVeP5moZfUA6",
 			"fillStyle": "hachure",
@@ -1736,7 +1770,7 @@ oa ^c7GdnE4Q
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1752550613690,
+			"updated": 1758074291358,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1830,8 +1864,8 @@ oa ^c7GdnE4Q
 		},
 		{
 			"type": "arrow",
-			"version": 100,
-			"versionNonce": 368738564,
+			"version": 112,
+			"versionNonce": 247086905,
 			"isDeleted": false,
 			"id": "kDUKLoXlBwINbDXx0ytIM",
 			"fillStyle": "hachure",
@@ -1852,7 +1886,7 @@ oa ^c7GdnE4Q
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1752550613687,
+			"updated": 1758074291356,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1986,6 +2020,150 @@ oa ^c7GdnE4Q
 			"originalText": "通外网",
 			"lineHeight": 1.2,
 			"baseline": 19
+		},
+		{
+			"type": "text",
+			"version": 64,
+			"versionNonce": 1850365890,
+			"isDeleted": false,
+			"id": "LOtHEpcw",
+			"fillStyle": "hachure",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": -545.1208336729367,
+			"y": -834.7061998138843,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 175.78125,
+			"height": 24,
+			"seed": 1949977822,
+			"groupIds": [],
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1757986741623,
+			"link": null,
+			"locked": false,
+			"fontSize": 20,
+			"fontFamily": 3,
+			"text": "access_token : ",
+			"rawText": "access_token : ",
+			"textAlign": "left",
+			"verticalAlign": "top",
+			"containerId": null,
+			"originalText": "access_token : ",
+			"lineHeight": 1.2,
+			"baseline": 19
+		},
+		{
+			"type": "text",
+			"version": 130,
+			"versionNonce": 871988574,
+			"isDeleted": false,
+			"id": "QbNuSHuv",
+			"fillStyle": "hachure",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": -353.6922622443653,
+			"y": -834.7061998138843,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 683.7109375,
+			"height": 24,
+			"seed": 1232957826,
+			"groupIds": [],
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1757986741623,
+			"link": "https://developer.work.weixin.qq.com/document/path/91039",
+			"locked": false,
+			"fontSize": 20,
+			"fontFamily": 3,
+			"text": "🌐https://developer.work.weixin.qq.com/document/path/91039",
+			"rawText": "https://developer.work.weixin.qq.com/document/path/91039",
+			"textAlign": "left",
+			"verticalAlign": "top",
+			"containerId": null,
+			"originalText": "🌐https://developer.work.weixin.qq.com/document/path/91039",
+			"lineHeight": 1.2,
+			"baseline": 19
+		},
+		{
+			"type": "text",
+			"version": 235,
+			"versionNonce": 1080954754,
+			"isDeleted": false,
+			"id": "RhNVFrcL",
+			"fillStyle": "hachure",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": -298.3981445973065,
+			"y": -787.059140990355,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 871.2109375,
+			"height": 24,
+			"seed": 197969886,
+			"groupIds": [],
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1757986741623,
+			"link": "https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=ID&corpsecret=SECRET",
+			"locked": false,
+			"fontSize": 20,
+			"fontFamily": 3,
+			"text": "🌐https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=ID&corpsecret=SECRET",
+			"rawText": "https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=ID&corpsecret=SECRET",
+			"textAlign": "left",
+			"verticalAlign": "top",
+			"containerId": null,
+			"originalText": "🌐https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=ID&corpsecret=SECRET",
+			"lineHeight": 1.2,
+			"baseline": 19
+		},
+		{
+			"type": "text",
+			"version": 62,
+			"versionNonce": 706213826,
+			"isDeleted": false,
+			"id": "wKiOYbvb",
+			"fillStyle": "hachure",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": -1114.6700460276122,
+			"y": 797.1200814066249,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 3011.71875,
+			"height": 648,
+			"seed": 448804738,
+			"groupIds": [],
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1757986860623,
+			"link": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=CORPID&redirect_uri=REDIRECT_URI&response_type=code&scope=snsapi_base&state=STATE&agentid=AGENTID#wechat_redirect\n\n\n\n示例URL\n\nhttps://open.weixin.qq.com/connect/oauth2/authorize?appid=ww05bd1e6d1a6acb58&agentid=1000047&redirect_uri=https://tp.envision-aesc.cn:3443/work-order-h5/list&response_type=code&state=1000047&scope=snsapi_userinfo&connect_redirect=1#wechat_redirect\n\n\n\n伽利略URL:\n\nhttps://open.weixin.qq.com/connect/oauth2/authorize?appid=ww05bd1e6d1a6acb58&redirect_uri=https://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/redirect.html&tagert=dasfs&response_type=code&scope=snsapi_base&state=work-order&agentid=1000116#wechat_redirect\n\n\n\n\n\nhttps://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/....\n\n​        -> http://10.206.121.15:31969/...\n\n\n\nhttps://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/api/....\n\n​        -> http://10.206.121.15:32649/api/...",
+			"locked": false,
+			"fontSize": 20,
+			"fontFamily": 3,
+			"text": "🌐https://open.weixin.qq.com/connect/oauth2/authorize?appid=CORPID&redirect_uri=REDIRECT_URI&response_type=code&scope=snsapi_base&state=STATE&agentid=AGENTID#wechat_redirect\n\n\n\n示例URL\n\nhttps://open.weixin.qq.com/connect/oauth2/authorize?appid=ww05bd1e6d1a6acb58&agentid=1000047&redirect_uri=https://tp.envision-aesc.cn:3443/work-order-h5/list&response_type=code&state=1000047&scope=snsapi_userinfo&connect_redirect=1#wechat_redirect\n\n\n\n伽利略URL:\n\nhttps://open.weixin.qq.com/connect/oauth2/authorize?appid=ww05bd1e6d1a6acb58&redirect_uri=https://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/redirect.html&tagert=dasfs&response_type=code&scope=snsapi_base&state=work-order&agentid=1000116#wechat_redirect\n\n\n\n\n\nhttps://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/....\n\n​        -> http://10.206.121.15:31969/...\n\n\n\nhttps://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/api/....\n\n​        -> http://10.206.121.15:32649/api/...",
+			"rawText": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=CORPID&redirect_uri=REDIRECT_URI&response_type=code&scope=snsapi_base&state=STATE&agentid=AGENTID#wechat_redirect\n\n\n\n示例URL\n\nhttps://open.weixin.qq.com/connect/oauth2/authorize?appid=ww05bd1e6d1a6acb58&agentid=1000047&redirect_uri=https://tp.envision-aesc.cn:3443/work-order-h5/list&response_type=code&state=1000047&scope=snsapi_userinfo&connect_redirect=1#wechat_redirect\n\n\n\n伽利略URL:\n\nhttps://open.weixin.qq.com/connect/oauth2/authorize?appid=ww05bd1e6d1a6acb58&redirect_uri=https://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/redirect.html&tagert=dasfs&response_type=code&scope=snsapi_base&state=work-order&agentid=1000116#wechat_redirect\n\n\n\n\n\nhttps://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/....\n\n​        -> http://10.206.121.15:31969/...\n\n\n\nhttps://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/api/....\n\n​        -> http://10.206.121.15:32649/api/...",
+			"textAlign": "left",
+			"verticalAlign": "top",
+			"containerId": null,
+			"originalText": "🌐https://open.weixin.qq.com/connect/oauth2/authorize?appid=CORPID&redirect_uri=REDIRECT_URI&response_type=code&scope=snsapi_base&state=STATE&agentid=AGENTID#wechat_redirect\n\n\n\n示例URL\n\nhttps://open.weixin.qq.com/connect/oauth2/authorize?appid=ww05bd1e6d1a6acb58&agentid=1000047&redirect_uri=https://tp.envision-aesc.cn:3443/work-order-h5/list&response_type=code&state=1000047&scope=snsapi_userinfo&connect_redirect=1#wechat_redirect\n\n\n\n伽利略URL:\n\nhttps://open.weixin.qq.com/connect/oauth2/authorize?appid=ww05bd1e6d1a6acb58&redirect_uri=https://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/redirect.html&tagert=dasfs&response_type=code&scope=snsapi_base&state=work-order&agentid=1000116#wechat_redirect\n\n\n\n\n\nhttps://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/....\n\n​        -> http://10.206.121.15:31969/...\n\n\n\nhttps://tp.envision-aesc.cn:3443/galileo-weixin-h5-dev/api/....\n\n​        -> http://10.206.121.15:32649/api/...",
+			"lineHeight": 1.2,
+			"baseline": 643
 		}
 	],
 	"appState": {
@@ -2003,10 +2181,10 @@ oa ^c7GdnE4Q
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 664.4905815720963,
-		"scrollY": 681.9974288054805,
+		"scrollX": 1335.1201948371358,
+		"scrollY": -159.13179198684657,
 		"zoom": {
-			"value": 0.7000000000000001
+			"value": 0.6000000000000001
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
