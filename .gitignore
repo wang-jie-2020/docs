@@ -9,3 +9,4 @@ node_modules/
 .vuepress/dist
 yarn.lock
 package-lock.json
+/大模型/Happy-LLM-0727.pdf
