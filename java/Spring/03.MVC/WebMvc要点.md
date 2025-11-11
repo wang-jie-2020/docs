@@ -1,0 +1,183 @@
+## RequestMappingHandlerMapping
+
+>RequestMappingHandlerMapping是Spring MVC中的一个请求映射处理器，它负责将HTTP请求映射到特定的@RequestMapping注解的方法上。允许你使用简单的注解（如@GetMapping、@PostMapping、@RequestMapping等）来定义请求路径和HTTP方法。
+>工作机制：
+>* 当Spring MVC的DispatcherServlet接收到一个HTTP请求时，它会查找一个合适的HandlerMapping来处理这个请求。
+>* RequestMappingHandlerMapping会检查它的映射注册表，该注册表包含了所有使用@RequestMapping注解的方法的映射信息。
+>* 如果找到了一个匹配的映射，那么RequestMappingHandlerMapping会返回一个HandlerExecutionChain，它包含了要执行的处理器（通常是HandlerMethod，代表一个@Controller中的方法）和任何与之关联的拦截器。
+>与其他组件的关系：
+>* RequestMappingHandlerMapping与HandlerAdapter（如RequestMappingHandlerAdapter）紧密合作。一旦RequestMappingHandlerMapping找到了一个匹配的处理器，它会将这个处理器传递给HandlerAdapter，后者负责调用处理器并执行相应的逻辑。
+>* RequestMappingHandlerMapping还可能与HandlerInterceptor一起使用，以在请求处理过程中添加额外的逻辑（如日志记录、身份验证等）。
+>
+
+```java
+@Override
+public void afterPropertiesSet()
+{
+    RequestMappingHandlerMapping mapping = applicationContext.getBean(RequestMappingHandlerMapping.class);
+    Map<RequestMappingInfo, HandlerMethod> map = mapping.getHandlerMethods();
+
+    map.keySet().forEach(info -> {
+        HandlerMethod handlerMethod = map.get(info);
+        ...
+    });
+}
+```
+
+## 异常处理
+
+@RestControllerAdvice
+
+## 参数校验
+
+@NotNull @NotBlank....   @Valid
+
+@Validated
+
+```java
+@PostMapping("validation-error")
+public void ThrowValidationError(@Validated @RequestBody ErrorInput input) {
+
+}
+
+@Data
+public class ErrorInput {
+
+    @NotNull(message = "not null")
+    @NotBlank(message = "not blank")
+    @Length(max = 5, message = "name <=5")
+    private String name;
+}
+
+//如果需要分组时，定义空类EditValidationGroup、AddValidationGroup，感觉会很不好用
+//@NotEmpty(message = "{user.msg.userId.notEmpty}", groups = {EditValidationGroup.class}) 
+//@NotEmpty(message = "{user.msg.userId.notEmpty}", groups = {AddValidationGroup.class}) 
+```
+
+### 自定义注解校验
+
+自定义`Xss`校验器，实现`ConstraintValidator`接口
+
+```java
+/**
+ * 自定义xss校验注解实现
+ * 
+ * @author ruoyi
+ */
+public class XssValidator implements ConstraintValidator<Xss, String>
+{
+    private final String HTML_PATTERN = "<(\\S*?)[^>]*>.*?|<.*? />";
+
+    @Override
+    public boolean isValid(String value, ConstraintValidatorContext constraintValidatorContext)
+    {
+        return !containsHtml(value);
+    }
+
+    public boolean containsHtml(String value)
+    {
+        Pattern pattern = Pattern.compile(HTML_PATTERN);
+        Matcher matcher = pattern.matcher(value);
+        return matcher.matches();
+    }
+}
+```
+
+新增`Xss`注解，设置自定义校验器`XssValidator.class`
+
+```java
+/**
+ * 自定义xss校验注解
+ * 
+ * @author ruoyi
+ */
+@Retention(RetentionPolicy.RUNTIME)
+@Target(value = { ElementType.METHOD, ElementType.FIELD, ElementType.CONSTRUCTOR, ElementType.PARAMETER })
+@Constraint(validatedBy = { XssValidator.class })
+public @interface Xss
+{
+    String message()
+
+    default "不允许任何脚本运行";
+
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
+}
+```
+
+如果是在方法里面校验整个实体，参考示例:
+
+```java
+@Autowired
+protected Validator validator;
+
+public void importUser(SysUser user)
+{
+    BeanValidators.validateWithException(validator, user);
+}
+```
+
+## @InitBinder
+
+请求中注册自定义参数的解析，从而达到自定义请求参数格式的目的
+
+如果出现在全局的ControllerAdvide中则全局生效(个人理解上写在baseController中也许更好)
+
+```java
+@InitBinder
+public void handleInitBinder(WebDataBinder dataBinder){
+    dataBinder.registerCustomEditor(Date.class,
+            new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), false));
+}
+```
+
+## @ModelAttribute
+
+预设全局参数，比如最典型的使用Spring Security时将添加当前登录的用户信息（UserDetails)作为参数
+
+非必要了解
+
+## Binding注解
+
+在不注解时,默认当URL参数处理;当然form表单会有额外;
+
+|            |                              |
+| ---------- | ---------------------------- |
+| FromQuery  | RequestParam (~~PathParam~~) |
+| FromRoute  | PathVariable                 |
+| FromHeader | RequestHeader                |
+| FromBody   | RequestBody                  |
+| FromForm   | RequestParam 或缺省?         |
+
+## HttpContext
+
+通过请求参数中获取 Request 对象；  
+
+```java
+public void index(HttpServletRequest request) { }
+```
+
+
+
+通过 RequestContextHolder 获取 Request 对象；
+
+	ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes)RequestContextHolder.getRequestAttributes();
+	HttpServletRequest request = servletRequestAttributes.getRequest();
+
+
+
+通过自动注入获取 Request 对象;
+
+```java
+@Autowired
+private HttpServletRequest request; // 自动注入 request 对象
+```
+
+
+
+
+
+
+
+
