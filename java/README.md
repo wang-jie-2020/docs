@@ -46,3 +46,13 @@ TableFieldExists
 
 一裤衩子wrapper
 
+
+
+crud --> 自动id 手动id enum
+
+关联语句的几种方式
+
+可空类型 
+
+全表拦截
+
