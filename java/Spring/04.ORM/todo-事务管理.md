@@ -43,3 +43,57 @@
 
 
 
+
+
+
+
+### 事务管器(transactionManager)
+
+在mybatis中有两种类型的事务管理器(type=JDBC|MANAGED)
+
+JDBC-这个配置直接使用了JDBC的提交和回滚功能，它依赖从数据源获得的连接来管理事务的作用域。默认情况下，在关闭连接时启用自动提交
+
+MANAGED-这个配置几乎没做什么。它从不提交或回滚一个连接，而是让容器来管理事务的整个生命周期。默认情况下，它会关闭连接。
+
+在spring+mybatis中，没有必要设置事务管理器，设置了也不会生效，spring会使用自带的事务管理器来覆盖mybatis自己的配置。
+
+我们也可以使用TransactionTemplate来操作事务，此时可以省略commit和rollback方法的调用
+
+```java
+public class UserService {
+  private final PlatformTransactionManager transactionManager;
+  public UserService(PlatformTransactionManager transactionManager) {
+    this.transactionManager = transactionManager;
+  }
+  public void createUser() {
+    TransactionStatus txStatus =
+        transactionManager.getTransaction(new DefaultTransactionDefinition());
+    try {
+      userMapper.insertUser(user);
+    } catch (Exception e) {
+      transactionManager.rollback(txStatus);
+      throw e;
+    }
+    transactionManager.commit(txStatus);
+  }
+}
+```
+
+在使用 `TransactionTemplate` 的时候，可以省略对 `commit` 和 `rollback` 方法的调用。
+
+```java
+public class UserService {
+  private final PlatformTransactionManager transactionManager;
+  public UserService(PlatformTransactionManager transactionManager) {
+    this.transactionManager = transactionManager;
+  }
+  public void createUser() {
+    TransactionTemplate transactionTemplate = new TransactionTemplate(transactionManager);
+    transactionTemplate.execute(txStatus -> {
+      userMapper.insertUser(user);
+      return null;
+    });
+  }
+}
+```
+
