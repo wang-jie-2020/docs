@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[132],{459:function(t,n,s){"use strict";s.r(n);var e=s(5),o=Object(e.a)({},(function(){var t=this._self._c;return t("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[t("p",[this._v("这种方法虽然简单，却展示了数学中的一种用随机的蛮力对抗精确逻辑的思想方法，一种用数量得到质量的计算思想")])])}),[],!1,null,null,null);n.default=o.exports}}]);
