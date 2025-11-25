@@ -15,3 +15,5 @@ TableFieldExists
 属性未null的update
 
 一裤衩子wrapper
+
+mbj 有没有必要
