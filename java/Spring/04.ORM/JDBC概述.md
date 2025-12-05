@@ -50,4 +50,3 @@ ResultSetHandler<User> resultSetHandler = new BeanHandler<User>(User.class);
 List<User> userList = queryRunner.execute("select * from user where id = ?", resultSetHandler, 101);
 ```
 
-
