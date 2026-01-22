@@ -6,6 +6,8 @@
 
 ​	free -h
 
+​	df -h (单个文件夹 du)
+
 网络:
 
 ​	netstat -ano
