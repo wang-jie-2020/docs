@@ -1,10 +1,8 @@
-[toc]
 
-
-
-linux-release: https://download.redis.io/releases/*
 
 ## TAR包部署
+
+linux-release: https://download.redis.io/releases/*
 
 ### (1) 编译依赖安装(也许需要)
 
