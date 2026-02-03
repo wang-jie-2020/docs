@@ -1,7 +1,7 @@
 
 OpenTelemetry整合的标准包括# OpenTracing（链路追踪） 和 # OpenCensus（指标检测），这个标准有牛比的背景，目前的开放标准也有一些第三方支持。
 
-![[3.OpenTelemetryDrawing.excalidraw|600*800]]
+![[OpenTelemetryDrawing.excalidraw|600*800]]
 
 OpenTelemetry的目标：
 -   Tracing：提供了一个请求从接收到处理完成整个生命周期的跟踪路径，一次请求通常过经过N个系统，因此也被称为分布式链路追踪
