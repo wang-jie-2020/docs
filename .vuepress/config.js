@@ -16,8 +16,6 @@ let sidebar_net = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'net/
 let sidebar_other = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'other/'), path.join(rootPath, 'other/'), unDirIncludes, SuffixIncludes, {})
 let sidebar_python = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'python/'), path.join(rootPath, 'python/'), unDirIncludes, SuffixIncludes, {})
 
-console.log(sidebar_theory)
-
 module.exports = {
     title: '📖Documents',
     description: 'hello world',
