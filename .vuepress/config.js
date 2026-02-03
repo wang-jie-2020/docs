@@ -15,7 +15,6 @@ let sidebar_java = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'jav
 let sidebar_net = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'net/'), path.join(rootPath, 'net/'), unDirIncludes, SuffixIncludes, {})
 let sidebar_other = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'other/'), path.join(rootPath, 'other/'), unDirIncludes, SuffixIncludes, {})
 let sidebar_python = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'python/'), path.join(rootPath, 'python/'), unDirIncludes, SuffixIncludes, {})
-let sidebar_vue = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'vue/'), path.join(rootPath, 'vue/'), unDirIncludes, SuffixIncludes, {})
 
 console.log(sidebar_theory)
 
@@ -149,10 +148,6 @@ module.exports = {
                         link: '/go/'
                     },
                     {
-                        text: 'vue',
-                        link: '/vue/'
-                    },
-                    {
                         text: 'other',
                         link: '/other/'
                     },
@@ -186,7 +181,6 @@ module.exports = {
             '/java/': sidebar_java,
             '/python/': sidebar_python,
             '/go/': sidebar_go,
-            '/vue/': sidebar_vue,
             '/other/': sidebar_other,
             '/note/': [
                 {
