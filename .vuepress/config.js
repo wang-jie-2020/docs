@@ -10,7 +10,6 @@ let unDirIncludes = ['node_modules', 'assets', 'public', 'images', 'media']
 let SuffixIncludes = ['.md', '.html']
 
 //使用方法生生成侧边栏
-let sidebar_db = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'db/'), path.join(rootPath, 'db/'), unDirIncludes, SuffixIncludes, {})
 let sidebar_go = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'go/'), path.join(rootPath, 'go/'), unDirIncludes, SuffixIncludes, {})
 let sidebar_java = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'java/'), path.join(rootPath, 'java/'), unDirIncludes, SuffixIncludes, {})
 let sidebar_net = sideBarTool.genSideBarGroupRecursion(path.join(rootPath, 'net/'), path.join(rootPath, 'net/'), unDirIncludes, SuffixIncludes, {})
